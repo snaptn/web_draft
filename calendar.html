@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar - SNAP Neighborhood Association</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2C3E50',    // Dark blue-gray
+            secondary: '#E74C3C',  // Red
+            accent: '#ECF0F1',     // Light gray
+            dark: '#2C3E50',       // Dark blue-gray
+            light: '#ECF0F1',      // Light gray
+            vibrant: {
+              orange: '#FF6B35',
+              yellow: '#FFD93D',
+              green: '#4CAF50',
+              purple: '#9C27B0'
+            }
+          },
+          fontFamily: {
+            'display': ['"Playfair Display"', 'serif'],
+            'sans': ['Poppins', 'sans-serif']
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'slide-up': 'slideUp 0.5s ease-out'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- NAVBAR -->
+  <nav class="bg-gray-800/95 backdrop-blur-sm shadow-lg fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20">
+        <div class="flex items-center">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <img src="images/WeHo_logo.png" alt="SNAP Logo" class="h-12 w-12 transition-transform group-hover:scale-110" />
+            <span class="text-white font-bold text-xl hover:text-accent transition-colors font-display">SNAP</span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-accent transition-colors font-medium">Home</a>
+          <a href="calendar.html" class="text-white hover:text-accent transition-colors font-medium">Calendar</a>
+          <a href="resources.html" class="text-white hover:text-accent transition-colors font-medium">Resources</a>
+          <a href="faq.html" class="text-white hover:text-accent transition-colors font-medium">FAQ</a>
+          <a href="donate.html" class="text-white hover:text-accent transition-colors font-medium">Donate</a>
+          <a href="contact.html" class="text-white hover:text-accent transition-colors font-medium">Connect</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="text-white hover:text-accent focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="relative pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-5xl font-bold text-center mb-8 font-display text-gray-800">Community Calendar</h1>
+      <p class="text-xl text-center text-gray-600 max-w-3xl mx-auto">Stay updated with all our community events, meetings, and activities.</p>
+    </div>
+  </header>
+
+  <!-- Quick Navigation -->
+  <div class="bg-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-center gap-4">
+        <a href="#submit-event" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+          </svg>
+          Submit an Event
+        </a>
+        <a href="#book-center" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+          </svg>
+          Book the Community Center
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN CALENDAR SECTION -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <!-- Calendar Filters -->
+        <div class="lg:col-span-1">
+          <div class="bg-gray-50 rounded-2xl p-6 sticky top-24">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 font-display">Filters</h2>
+            <div class="space-y-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Event Type</label>
+                <select class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                  <option value="">All Events</option>
+                  <option value="meeting">Community Meetings</option>
+                  <option value="youth">Youth Programs</option>
+                  <option value="arts">Arts & Culture</option>
+                  <option value="health">Health & Wellness</option>
+                  <option value="business">Local Business</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Date Range</label>
+                <input type="date" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              </div>
+              <button class="w-full bg-vibrant-orange text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors">
+                Apply Filters
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Calendar Embed -->
+        <div class="lg:col-span-3">
+          <div class="bg-gray-50 rounded-2xl p-6">
+            <iframe 
+              src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0&height=600"
+              style="border: 0" 
+              width="100%" 
+              height="600" 
+              frameborder="0" 
+              scrolling="no">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUBMIT EVENT SECTION -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Submit Event Form -->
+        <div>
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Submit an Event</h2>
+          <p class="text-gray-600 mb-8">Have an event you'd like to share with the community? Fill out the form below and our team will review it for approval.</p>
+          
+          <form id="event-submission-form" class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Event Title</label>
+              <input type="text" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+              <select required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                <option value="">Select a category</option>
+                <option value="meeting">Community Meeting</option>
+                <option value="youth">Youth Program</option>
+                <option value="arts">Arts & Culture</option>
+                <option value="health">Health & Wellness</option>
+                <option value="business">Local Business</option>
+              </select>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Date</label>
+                <input type="date" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Time</label>
+                <input type="time" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Location</label>
+              <input type="text" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Description</label>
+              <textarea required rows="4" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange"></textarea>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Contact Information</label>
+              <input type="email" required placeholder="Your email" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+            </div>
+            
+            <button type="submit" class="w-full bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
+              Submit Event
+            </button>
+          </form>
+        </div>
+
+        <!-- Book Community Center -->
+        <div>
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Book the Community Center</h2>
+          <p class="text-gray-600 mb-8">Our community center is available for rent for private events, meetings, and gatherings. Check availability and submit a booking request below.</p>
+          
+          <form id="booking-form" class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Event Type</label>
+              <select required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                <option value="">Select event type</option>
+                <option value="meeting">Meeting</option>
+                <option value="party">Party</option>
+                <option value="workshop">Workshop</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
+                <input type="date" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">End Date</label>
+                <input type="date" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Start Time</label>
+                <input type="time" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">End Time</label>
+                <input type="time" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              </div>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Expected Attendance</label>
+              <input type="number" required min="1" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Additional Notes</label>
+              <textarea rows="4" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange"></textarea>
+            </div>
+            
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Contact Information</label>
+              <input type="email" required placeholder="Your email" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+            </div>
+            
+            <button type="submit" class="w-full bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
+              Submit Booking Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Event Submission JavaScript -->
+  <script>
+    document.getElementById('event-submission-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      // Add your event submission logic here
+      // This should include sending the data to your backend
+      // and handling the admin approval queue
+    });
+
+    document.getElementById('booking-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      // Add your booking request logic here
+      // This should include checking availability
+      // and sending the request to your backend
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <p class="text-gray-400">📫 snaptn@gmail.com | 501(c)(3) nonprofit</p>
+        </div>
+        <div class="text-center">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+          <span class="mx-2">·</span>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+        </div>
+        <div class="text-right">
+          <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+          <span class="mx-2">|</span>
+          <a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+
+

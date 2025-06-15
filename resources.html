@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources - SNAP Neighborhood Association</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2C3E50',    // Dark blue-gray
+            secondary: '#E74C3C',  // Red
+            accent: '#ECF0F1',     // Light gray
+            dark: '#2C3E50',       // Dark blue-gray
+            light: '#ECF0F1',      // Light gray
+            vibrant: {
+              orange: '#FF6B35',
+              yellow: '#FFD93D',
+              green: '#4CAF50',
+              purple: '#9C27B0'
+            }
+          },
+          fontFamily: {
+            'display': ['"Playfair Display"', 'serif'],
+            'sans': ['Poppins', 'sans-serif']
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'slide-up': 'slideUp 0.5s ease-out'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- NAVBAR -->
+  <nav class="bg-gray-800/95 backdrop-blur-sm shadow-lg fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20">
+        <div class="flex items-center">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <img src="images/WeHo_logo.png" alt="SNAP Logo" class="h-12 w-12 transition-transform group-hover:scale-110" />
+            <span class="text-white font-bold text-xl hover:text-accent transition-colors font-display">SNAP</span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-accent transition-colors font-medium">Home</a>
+          <a href="calendar.html" class="text-white hover:text-accent transition-colors font-medium">Calendar</a>
+          <a href="resources.html" class="text-white hover:text-accent transition-colors font-medium">Resources</a>
+          <a href="faq.html" class="text-white hover:text-accent transition-colors font-medium">FAQ</a>
+          <a href="donate.html" class="text-white hover:text-accent transition-colors font-medium">Donate</a>
+          <a href="contact.html" class="text-white hover:text-accent transition-colors font-medium">Connect</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="text-white hover:text-accent focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="relative pt-32 pb-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-5xl font-bold text-center mb-8 font-display text-gray-800">Resources</h1>
+      <p class="text-xl text-center text-gray-600 max-w-3xl mx-auto">Access important documents, guidelines, and information for our community.</p>
+    </div>
+  </header>
+
+  <!-- TABLE OF CONTENTS SECTION -->
+  <section class="py-12 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-gray-800 mb-8 font-display text-center">Quick Navigation</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Community Info -->
+        <div class="bg-white rounded-xl p-6 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold text-vibrant-orange mb-4">Community Information</h3>
+          <ul class="space-y-2">
+            <li><a href="#local-services" class="text-gray-600 hover:text-vibrant-orange transition-colors">Local Services</a></li>
+            <li><a href="#community-programs" class="text-gray-600 hover:text-vibrant-orange transition-colors">Community Programs</a></li>
+            <li><a href="#local-businesses" class="text-gray-600 hover:text-vibrant-orange transition-colors">Local Businesses</a></li>
+            <li><a href="#documents-forms" class="text-gray-600 hover:text-vibrant-orange transition-colors">Documents & Forms</a></li>
+          </ul>
+        </div>
+
+        <!-- Development -->
+        <div class="bg-white rounded-xl p-6 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold text-vibrant-orange mb-4">Development</h3>
+          <ul class="space-y-2">
+            <li><a href="#development-toolkit" class="text-gray-600 hover:text-vibrant-orange transition-colors">Development Toolkit</a></li>
+            <li><a href="#position-statements" class="text-gray-600 hover:text-vibrant-orange transition-colors">Position Statements</a></li>
+            <li><a href="#planning-study" class="text-gray-600 hover:text-vibrant-orange transition-colors">Planning Study</a></li>
+          </ul>
+        </div>
+
+        <!-- Meetings -->
+        <div class="bg-white rounded-xl p-6 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold text-vibrant-orange mb-4">Meetings & Documents</h3>
+          <ul class="space-y-2">
+            <li><a href="#meeting-agendas" class="text-gray-600 hover:text-vibrant-orange transition-colors">Meeting Agendas</a></li>
+            <li><a href="#meeting-archive" class="text-gray-600 hover:text-vibrant-orange transition-colors">Meeting Archive</a></li>
+          </ul>
+        </div>
+
+        <!-- City Links -->
+        <div class="bg-white rounded-xl p-6 hover:shadow-md transition-all">
+          <h3 class="text-lg font-semibold text-vibrant-orange mb-4">City Resources</h3>
+          <ul class="space-y-2">
+            <li><a href="#city-services" class="text-gray-600 hover:text-vibrant-orange transition-colors">City Services</a></li>
+            <li><a href="#city-departments" class="text-gray-600 hover:text-vibrant-orange transition-colors">City Departments</a></li>
+            <li><a href="#city-resources" class="text-gray-600 hover:text-vibrant-orange transition-colors">City Resources</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GENERAL COMMUNITY INFORMATION SECTION -->
+  <section id="community-info" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Local Services -->
+        <div id="local-services" class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Local Services</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">Emergency Services</h3>
+              <p class="text-gray-600">Police: (555) 123-4567<br>Fire Department: (555) 234-5678<br>Ambulance: (555) 345-6789</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">Utilities</h3>
+              <p class="text-gray-600">Water & Sewer: (555) 456-7890<br>Electric: (555) 567-8901<br>Gas: (555) 678-9012</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Community Programs -->
+        <div id="community-programs" class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Community Programs</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">Youth Programs</h3>
+              <p class="text-gray-600">After-school activities, sports teams, and educational workshops for children and teens.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">Senior Services</h3>
+              <p class="text-gray-600">Weekly social gatherings, health check-ups, and transportation services for seniors.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Local Businesses -->
+        <div id="local-businesses" class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Local Businesses</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">Restaurants</h3>
+              <p class="text-gray-600">Local dining options and special discounts for community members.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">Services</h3>
+              <p class="text-gray-600">Directory of local businesses offering services to community members.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Documents & Forms -->
+        <div id="documents-forms" class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Documents & Forms</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">Important Documents</h3>
+              <p class="text-gray-600">Bylaws, meeting minutes, and community guidelines available for download.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">Forms</h3>
+              <p class="text-gray-600">Membership applications, event permits, and facility rental forms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEVELOPMENT TOOLKIT SECTION -->
+  <section id="development-toolkit" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-12 font-display">Development Toolkit</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Zoning Guidelines -->
+        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+          <div class="text-vibrant-orange mb-4">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Zoning Guidelines</h3>
+          <p class="text-gray-600 mb-4">Learn about our neighborhood's zoning regulations and development standards.</p>
+          <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold inline-flex items-center">
+            View Guidelines
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Design Standards -->
+        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+          <div class="text-vibrant-orange mb-4">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Design Standards</h3>
+          <p class="text-gray-600 mb-4">Review architectural and design guidelines for new developments.</p>
+          <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold inline-flex items-center">
+            View Standards
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Permit Process -->
+        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+          <div class="text-vibrant-orange mb-4">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-800 mb-2">Permit Process</h3>
+          <p class="text-gray-600 mb-4">Step-by-step guide to obtaining necessary permits and approvals.</p>
+          <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold inline-flex items-center">
+            View Process
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Development Toolkit -->
+      <div class="bg-white rounded-xl shadow-md p-8 mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Development Toolkit</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <!-- Zoning Information -->
+          <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-200">
+            <div class="text-vibrant-orange mb-4">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Development Map</h3>
+            <p class="text-gray-600 mb-4">Interactive map showing current development projects in Nashville.</p>
+            <button onclick="toggleContent('zoning-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+              View Map
+            </button>
+          </div>
+
+          <!-- Development Guidelines -->
+          <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+            <div class="text-vibrant-orange mb-4">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Development Guidelines</h3>
+            <p class="text-gray-600 mb-4">Review our neighborhood's development guidelines and best practices.</p>
+            <button onclick="toggleContent('guidelines-content')" class="text-vibrant-orange hover:text-orange-600 font-medium">
+              View Guidelines →
+            </button>
+          </div>
+
+          <!-- Permit Process -->
+          <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+            <div class="text-vibrant-orange mb-4">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Permit Process</h3>
+            <p class="text-gray-600 mb-4">Understand the permit application process and requirements.</p>
+            <button onclick="toggleContent('permits-content')" class="text-vibrant-orange hover:text-orange-600 font-medium">
+              View Permit Guide →
+            </button>
+          </div>
+
+          <!-- Development Rubric -->
+          <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
+            <div class="text-vibrant-orange mb-4">
+              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Development Rubric</h3>
+            <p class="text-gray-600 mb-4">Review our community's criteria for evaluating development projects.</p>
+            <button onclick="toggleContent('rubric-content')" class="text-vibrant-orange hover:text-orange-600 font-medium">
+              View Rubric →
+            </button>
+          </div>
+        </div>
+
+        <!-- Content Sections -->
+        <div id="zoning-content" class="hidden mt-8">
+          <div class="bg-white rounded-lg p-6 border border-gray-200">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-xl font-semibold text-gray-900">Development Map</h3>
+              <button onclick="downloadPDF('zoning-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download PDF
+              </button>
+            </div>
+            <p class="text-gray-600 mb-4">
+              This interactive development map is maintained by the Nashville Business Journal. The map shows current development projects, construction cranes, and planned developments across Nashville. 
+              <a href="https://www.bizjournals.com/nashville/maps/nashville-crane-watch" target="_blank" class="text-vibrant-orange hover:text-orange-600 underline">View the original map here</a>.
+            </p>
+            <div class="aspect-w-16 aspect-h-9">
+              <iframe 
+                src="https://nshtest.maps.arcgis.com/apps/Shortlist/index.html?appid=ae87107f05c54caaa88f839572cf08d6"
+                class="w-full h-[600px] border-0 rounded-lg shadow-lg"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <div id="guidelines-content" class="hidden mt-8">
+          <div class="bg-white rounded-lg p-6 border border-gray-200">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-xl font-semibold text-gray-900">Development Guidelines</h3>
+              <button onclick="downloadPDF('guidelines-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download PDF
+              </button>
+            </div>
+            <p class="text-gray-600">Detailed development guidelines coming soon...</p>
+          </div>
+        </div>
+
+        <div id="permits-content" class="hidden mt-8">
+          <div class="bg-white rounded-lg p-6 border border-gray-200">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-xl font-semibold text-gray-900">Permit Process</h3>
+              <button onclick="downloadPDF('permits-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download PDF
+              </button>
+            </div>
+            <p class="text-gray-600">Detailed permit process information coming soon...</p>
+          </div>
+        </div>
+
+        <div id="rubric-content" class="hidden mt-8">
+          <div class="bg-white rounded-lg p-6 border border-gray-200">
+            <div class="flex justify-between items-center mb-4">
+              <h3 class="text-xl font-semibold text-gray-900">Development Rubric</h3>
+              <button onclick="downloadPDF('rubric-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download PDF
+              </button>
+            </div>
+            <p class="text-gray-600 mb-6">
+              This rubric is used to evaluate proposed projects in relation to Wedgewood Houston's community needs and wishes. Projects must meet at least a minimum score of 8 to be eligible for Wedgewood Houston community/SNAP support (letters, etc.)
+            </p>
+
+            <div class="overflow-x-auto mb-6">
+              <table class="min-w-full divide-y divide-gray-200">
+                <thead>
+                  <tr>
+                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Strong (2 Points)</th>
+                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sufficient (1 Point)</th>
+                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Lacking (0 Points)</th>
+                  </tr>
+                </thead>
+                <tbody class="bg-white divide-y divide-gray-200">
+                  <!-- Community Character -->
+                  <tr>
+                    <td class="px-6 py-4 whitespace-normal">
+                      <div class="text-sm font-medium text-gray-900">Community Character</div>
+                      <div class="text-sm text-gray-500">Example: reuses exist. Railyard-scale reuse. Art & utility visible, etc.</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Design and development plan are respectful of community character and history. Proposed buildings symbolize a reimagining of historical neighborhood structures. Unit makeup reflects surrounding community needs.</td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Proposed development includes units that are different from the character of neighborhood and surrounding properties. Size of proposed units do not fit the scale of the need in the community.</td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Building stands out from community character. No focus on maintaining historical character or meeting the community's needs.</td>
+                  </tr>
+
+                  <!-- Housing Diversity -->
+                  <tr>
+                    <td class="px-6 py-4 whitespace-normal">
+                      <div class="text-sm font-medium text-gray-900">Housing Diversity</div>
+                      <div class="text-sm text-gray-500">Examples: various unit formats, affordable income (AMI) definitions, rental units, family focused.</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">At least 30% of proposed housing/unit options are diverse housing options.</td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Only one type of diverse housing/units included in plan, BUT still represents at least 10% of the proposed units within the project.</td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Less than 10% diverse housing/units, included in the proposed project.</td>
+                  </tr>
+
+                  <!-- Transportation Consideration -->
+                  <tr>
+                    <td class="px-6 py-4 whitespace-normal">
+                      <div class="text-sm font-medium text-gray-900">Transportation Consideration</div>
+                      <div class="text-sm text-gray-500">Examples: parking, walkability, sidewalks, etc.</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Clear design for access to public and personal transportation needs. Improvements in neighborhood walkability, including pedestrian safety.</td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Plan minimally addresses pedestrian safety around busy streets, near schools, etc. Vague language surrounding developer's commitment to public or personal transportation needs.</td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">No consideration of public or personal transportation needs or pedestrian safety.</td>
+                  </tr>
+
+                  <!-- Sustainability -->
+                  <tr>
+                    <td class="px-6 py-4 whitespace-normal">
+                      <div class="text-sm font-medium text-gray-900">Sustainability</div>
+                      <div class="text-sm text-gray-500">LEED = Leadership in Energy & Environmental Design (examples: water efficiency, renewable materials, structural design efficiency, etc.)</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Plan for EITHER 10% increase in trees or unique use(s) of green space with focus on mitigating urban runoff. Inclusive, welcoming public spaces open to neighborhood and community members. Multiple LEED concepts firmly established.</td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Meets more than the minimum required open space, storm water, and landscape requirements, as defined in the Metro Nashville Zoning Ordinance. Plan for inclusive and welcoming open space. Some LEED concepts established.</td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Meets ONLY the minimum required open space, storm water, and landscape requirements, as defined in the Metro Nashville Zoning Ordinance. Lacks plan for inclusive and welcoming public open space. No LEED concepts established.</td>
+                  </tr>
+
+                  <!-- Artist/Creative -->
+                  <tr>
+                    <td class="px-6 py-4 whitespace-normal">
+                      <div class="text-sm font-medium text-gray-900">Artist/Creative</div>
+                      <div class="text-sm text-gray-500">Could be viewed within Housing Diversity category.</div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Proposed project focuses on inclusion of affordable maker space(s), entrepreneurial education, STEM, industrial space or art spaces that are inclusive in design and meant to welcome all neighbors. Includes potential outreach plan, to recruit diverse array of local artists, for onsite installations.</td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Focus on limited types of artistic/creative space. Lacks plan to ensure equity in either types of projects or artists inclusion. No recruitment plan to ensure inclusive diversity.</td>
+                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">No focus on artistic/creative space.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="bg-gray-50 rounded-lg p-4">
+              <h3 class="text-lg font-semibold text-gray-900 mb-3">Community Priorities</h3>
+              <p class="text-gray-600 mb-3">
+                SNAP evaluates proposed development projects within the WeHo community using a rubric that was formed with community input to ensure development projects address priorities and preserve the history of the neighborhood.
+              </p>
+              <p class="text-gray-600 mb-3">
+                Developers should incorporate this rubric into presentations when meeting with the community.
+              </p>
+              <p class="text-gray-600 mb-3">
+                SNAP members will score proposed development projects using the rubric to determine if neighborhood support is present.
+              </p>
+              <p class="text-gray-500 italic">
+                Note: This rubric is a living document and may change to fit the changing needs of the Wedgewood Houston Community.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITION STATEMENTS SECTION -->
+  <section id="position-statements" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-12 font-display">Position Statements</h2>
+      <div class="space-y-6">
+        <!-- Development -->
+        <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Development & Growth</h3>
+          <p class="text-gray-600 mb-4">Our stance on responsible development and sustainable growth in the neighborhood.</p>
+          <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold inline-flex items-center">
+            Read Statement
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Transportation -->
+        <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Transportation & Infrastructure</h3>
+          <p class="text-gray-600 mb-4">Our views on improving transportation and maintaining neighborhood infrastructure.</p>
+          <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold inline-flex items-center">
+            Read Statement
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Community Services -->
+        <div class="bg-white rounded-2xl p-6 hover:shadow-lg transition-all">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">Community Services</h3>
+          <p class="text-gray-600 mb-4">Our commitment to supporting and enhancing community services and programs.</p>
+          <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold inline-flex items-center">
+            Read Statement
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEETING AGENDAS SECTION -->
+  <section id="meeting-agendas" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-12 font-display">Meeting Agendas</h2>
+      <div class="space-y-6">
+        <!-- Recent Meetings -->
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-6">Recent Meetings</h3>
+          <div class="space-y-4">
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg hover:shadow-md transition-all">
+              <div>
+                <h4 class="font-semibold text-gray-800">Board Meeting - March 2024</h4>
+                <p class="text-gray-600">March 15, 2024</p>
+              </div>
+              <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold">View Agenda</a>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg hover:shadow-md transition-all">
+              <div>
+                <h4 class="font-semibold text-gray-800">Community Forum - February 2024</h4>
+                <p class="text-gray-600">February 28, 2024</p>
+              </div>
+              <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold">View Agenda</a>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-white rounded-lg hover:shadow-md transition-all">
+              <div>
+                <h4 class="font-semibold text-gray-800">Board Meeting - February 2024</h4>
+                <p class="text-gray-600">February 15, 2024</p>
+              </div>
+              <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold">View Agenda</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Archive -->
+        <div class="text-center">
+          <a href="#" class="inline-flex items-center text-vibrant-orange hover:text-orange-600 font-semibold">
+            View Meeting Archive
+            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEIGHBORHOOD PLANNING STUDY SECTION -->
+  <section id="planning-study" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-12 font-display">Neighborhood Planning Study</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Study Overview -->
+        <div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-6">Study Overview</h3>
+          <p class="text-gray-600 mb-6">Our comprehensive neighborhood planning study examines current conditions, identifies opportunities for improvement, and outlines a vision for the future of our community.</p>
+          <div class="space-y-4">
+            <div class="flex items-start">
+              <div class="text-vibrant-orange mt-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p class="text-gray-600 ml-3">Demographic analysis and population trends</p>
+            </div>
+            <div class="flex items-start">
+              <div class="text-vibrant-orange mt-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p class="text-gray-600 ml-3">Housing and development patterns</p>
+            </div>
+            <div class="flex items-start">
+              <div class="text-vibrant-orange mt-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p class="text-gray-600 ml-3">Transportation and infrastructure assessment</p>
+            </div>
+            <div class="flex items-start">
+              <div class="text-vibrant-orange mt-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p class="text-gray-600 ml-3">Community facilities and services evaluation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download Section -->
+        <div class="bg-white rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6">Download the Study</h3>
+          <div class="space-y-4">
+            <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:shadow-md transition-all">
+              <div class="flex items-center">
+                <svg class="w-8 h-8 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                <div class="ml-4">
+                  <h4 class="font-semibold text-gray-800">Full Study Report</h4>
+                  <p class="text-gray-600">PDF, 15MB</p>
+                </div>
+              </div>
+              <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+            </a>
+            <a href="#" class="flex items-center justify-between p-4 bg-gray-50 rounded-lg hover:shadow-md transition-all">
+              <div class="flex items-center">
+                <svg class="w-8 h-8 text-vibrant-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                </svg>
+                <div class="ml-4">
+                  <h4 class="font-semibold text-gray-800">Executive Summary</h4>
+                  <p class="text-gray-600">PDF, 2MB</p>
+                </div>
+              </div>
+              <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HELPFUL CITY LINKS SECTION -->
+  <section id="city-links" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-gray-800 mb-12 font-display">Helpful City Links</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- City Services -->
+        <div id="city-services" class="bg-gray-50 rounded-2xl p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">City Services</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">Building Permits</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">Business Licenses</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">Garbage & Recycling</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">Street Maintenance</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- City Departments -->
+        <div id="city-departments" class="bg-gray-50 rounded-2xl p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">City Departments</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">Planning Department</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">Public Works</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">Parks & Recreation</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">Police Department</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- City Resources -->
+        <div id="city-resources" class="bg-gray-50 rounded-2xl p-6">
+          <h3 class="text-xl font-bold text-gray-800 mb-4">City Resources</h3>
+          <ul class="space-y-3">
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">City Council Meetings</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">City Budget</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">City Maps</a>
+            </li>
+            <li>
+              <a href="#" class="text-gray-600 hover:text-vibrant-orange transition-colors">Emergency Services</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <p class="text-gray-400">📫 snaptn@gmail.com | 501(c)(3) nonprofit</p>
+        </div>
+        <div class="text-center">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+          <span class="mx-2">·</span>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+        </div>
+        <div class="text-right">
+          <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+          <span class="mx-2">|</span>
+          <a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleContent(contentId) {
+      // Hide all content sections first
+      document.querySelectorAll('[id$="-content"]').forEach(section => {
+        section.classList.add('hidden');
+      });
+      
+      // Show the selected content
+      const content = document.getElementById(contentId);
+      content.classList.remove('hidden');
+      
+      // Scroll to the content
+      content.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function downloadPDF(contentId) {
+      const content = document.getElementById(contentId);
+      const title = content.querySelector('h3').textContent;
+      
+      // Create a new window for printing
+      const printWindow = window.open('', '_blank');
+      
+      // Add the content to the new window with proper styling
+      printWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <title>${title}</title>
+            <style>
+              body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                max-width: 1200px;
+                margin: 40px auto;
+                padding: 20px;
+              }
+              h1 {
+                color: #f97316;
+                margin-bottom: 20px;
+                font-size: 24px;
+              }
+              table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 20px 0;
+              }
+              th, td {
+                border: 1px solid #ddd;
+                padding: 12px;
+                text-align: left;
+              }
+              th {
+                background-color: #f5f5f5;
+                font-weight: bold;
+              }
+              .note {
+                font-style: italic;
+                color: #666;
+                margin-top: 20px;
+              }
+              iframe {
+                width: 100%;
+                height: 800px;
+                border: none;
+                margin: 20px 0;
+              }
+              @media print {
+                body {
+                  margin: 0;
+                  padding: 20px;
+                  max-width: none;
+                }
+                iframe {
+                  height: 1000px;
+                  page-break-inside: avoid;
+                }
+                @page {
+                  size: landscape;
+                  margin: 1cm;
+                }
+              }
+            </style>
+          </head>
+          <body>
+            <h1>${title}</h1>
+            ${content.innerHTML}
+          </body>
+        </html>
+      `);
+      
+      // Wait for content to load then print
+      printWindow.document.close();
+      printWindow.onload = function() {
+        // Wait a bit for the iframe to load
+        setTimeout(() => {
+          printWindow.print();
+          // Close the window after printing
+          printWindow.onafterprint = function() {
+            printWindow.close();
+          };
+        }, 2000);
+      };
+    }
+  </script>
+</body>
+</html>

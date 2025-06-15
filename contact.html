@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Connect - SNAP Neighborhood Association</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2C3E50',    // Dark blue-gray
+            secondary: '#E74C3C',  // Red
+            accent: '#ECF0F1',     // Light gray
+            dark: '#2C3E50',       // Dark blue-gray
+            light: '#ECF0F1',      // Light gray
+            vibrant: {
+              orange: '#FF6B35',
+              yellow: '#FFD93D',
+              green: '#4CAF50',
+              purple: '#9C27B0'
+            }
+          },
+          fontFamily: {
+            'display': ['"Playfair Display"', 'serif'],
+            'sans': ['Poppins', 'sans-serif']
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'slide-up': 'slideUp 0.5s ease-out'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- NAVBAR -->
+  <nav class="bg-gray-800/95 backdrop-blur-sm shadow-lg fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20">
+        <div class="flex items-center">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <img src="images/WeHo_logo.png" alt="SNAP Logo" class="h-12 w-12 transition-transform group-hover:scale-110" />
+            <span class="text-white font-bold text-xl hover:text-accent transition-colors font-display">SNAP</span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-accent transition-colors font-medium">Home</a>
+          <a href="calendar.html" class="text-white hover:text-accent transition-colors font-medium">Calendar</a>
+          <a href="resources.html" class="text-white hover:text-accent transition-colors font-medium">Resources</a>
+          <a href="faq.html" class="text-white hover:text-accent transition-colors font-medium">FAQ</a>
+          <a href="donate.html" class="text-white hover:text-accent transition-colors font-medium">Donate</a>
+          <a href="contact.html" class="text-white hover:text-accent transition-colors font-medium">Connect</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="text-white hover:text-accent focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="relative pt-32 pb-20">
+    <div class="absolute inset-0">
+      <img src="images/mural_for_hero.png" alt="Community Mural" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-800/80 to-gray-800/60"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-slide-up">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 font-display">Connect With Us</h1>
+      <p class="text-2xl text-white/90 font-light">We'd love to hear from you</p>
+    </div>
+  </header>
+
+  <!-- EMAIL SIGNUP SECTION -->
+  <section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-gray-50 rounded-2xl p-12 text-center">
+        <h2 class="text-4xl font-bold text-gray-800 mb-6 font-display">Stay Connected</h2>
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Join our email list to receive updates about community events, meetings, and important announcements.</p>
+        <form class="max-w-md mx-auto">
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+            <button type="submit" class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT FORMS SECTION -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Contact Form -->
+        <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all transform hover:scale-105">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Send Us a Message</h2>
+          <form id="contact-form" class="space-y-6" action="mailto:snaptn@gmail.com" method="post" enctype="text/plain">
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">Name</label>
+              <input type="text" name="name" required class="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">Email</label>
+              <input type="email" name="email" required class="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">Message</label>
+              <textarea name="message" required class="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" rows="6"></textarea>
+            </div>
+            <button type="submit" class="w-full bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Map & Address -->
+        <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all transform hover:scale-105">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Visit Us</h2>
+          <div class="space-y-6">
+            <div class="rounded-xl overflow-hidden shadow-lg">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6444.026011317659!2d-86.76911199999999!3d36.141896599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88646671b3b9cd6f%3A0xb76b1a7d577bbad4!2s1224%20Martin%20St%2C%20Nashville%2C%20TN%2037203!5e0!3m2!1sen!2sus!4v1749954574710!5m2!1sen!2sus"
+                width="100%" 
+                height="300" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+            <div class="bg-white rounded-xl p-6 shadow-md">
+              <h3 class="text-xl font-semibold text-gray-800 mb-4">SNAP Community Center</h3>
+              <p class="text-gray-600">1224 Martin Street<br>Nashville, TN 37203</p>
+              <p class="text-gray-600 mt-4">📧 snaptn@gmail.com</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOARD MEMBERS -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-12 font-display">Board of Directors</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- President -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all transform hover:scale-105">
+          <img src="images/board/president.jpg" alt="Caroleen - President" class="w-full h-64 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800">Caroleen</h3>
+            <p class="text-vibrant-orange font-medium">President</p>
+            <p class="text-gray-600 mt-2">Leading our community initiatives and strategic planning</p>
+          </div>
+        </div>
+
+        <!-- Vice President -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all transform hover:scale-105">
+          <img src="images/board/vice-president.jpg" alt="Shay - Vice President" class="w-full h-64 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800">Shay</h3>
+            <p class="text-vibrant-orange font-medium">Vice President</p>
+            <p class="text-gray-600 mt-2">Overseeing community programs and partnerships</p>
+          </div>
+        </div>
+
+        <!-- Treasurer -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all transform hover:scale-105">
+          <img src="images/board/treasurer.jpg" alt="Ally - Treasurer" class="w-full h-64 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800">Ally</h3>
+            <p class="text-vibrant-orange font-medium">Treasurer</p>
+            <p class="text-gray-600 mt-2">Managing finances and budget planning</p>
+          </div>
+        </div>
+
+        <!-- Secretary -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all transform hover:scale-105">
+          <img src="images/board/secretary.jpg" alt="Greyson - Secretary" class="w-full h-64 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800">Greyson</h3>
+            <p class="text-vibrant-orange font-medium">Secretary</p>
+            <p class="text-gray-600 mt-2">Maintaining records and communications</p>
+          </div>
+        </div>
+
+        <!-- Community Outreach -->
+        <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all transform hover:scale-105">
+          <img src="images/board/outreach.jpg" alt="Bryan - Community Outreach" class="w-full h-64 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800">Bryan</h3>
+            <p class="text-vibrant-orange font-medium">Community Outreach</p>
+            <p class="text-gray-600 mt-2">Building relationships with local organizations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold mb-8 font-display">Stay Connected</h2>
+      <p class="text-xl text-gray-600 mb-8">Join our newsletter to receive updates about community events, meetings, and important announcements.</p>
+      
+      <!-- Mailchimp Form -->
+      <div id="mc_embed_signup">
+        <form action="https://southnashville.us1.list-manage.com/subscribe/post?u=YOUR_MAILCHIMP_U&amp;id=YOUR_MAILCHIMP_ID" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Enter your email" required
+              class="flex-1 px-6 py-4 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+            <button type="submit" name="subscribe" id="mc-embedded-subscribe"
+              class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
+              Subscribe
+            </button>
+          </div>
+          <!-- Real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true">
+            <input type="text" name="b_YOUR_MAILCHIMP_U_YOUR_MAILCHIMP_ID" tabindex="-1" value="">
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form JavaScript -->
+  <script>
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      const email = formData.get('email');
+      const name = formData.get('name');
+      const message = formData.get('message');
+      
+      // You can add additional form handling logic here
+      // For now, it will use the mailto: link
+      window.location.href = `mailto:snaptn@gmail.com?subject=Contact from ${name}&body=${message}%0A%0AFrom: ${email}`;
+    });
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <p class="text-gray-400">📫 snaptn@gmail.com | 501(c)(3) nonprofit</p>
+        </div>
+        <div class="text-center">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+          <span class="mx-2">·</span>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+        </div>
+        <div class="text-right">
+          <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+          <span class="mx-2">|</span>
+          <a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

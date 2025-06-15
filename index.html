@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SNAP Neighborhood Association</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2C3E50',    // Dark blue-gray
+            secondary: '#E74C3C',  // Red
+            accent: '#ECF0F1',     // Light gray
+            dark: '#2C3E50',       // Dark blue-gray
+            light: '#ECF0F1',      // Light gray
+            vibrant: {
+              orange: '#FF6B35',
+              yellow: '#FFD93D',
+              green: '#4CAF50',
+              purple: '#9C27B0'
+            }
+          },
+          fontFamily: {
+            'display': ['"Playfair Display"', 'serif'],
+            'sans': ['Poppins', 'sans-serif']
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'slide-up': 'slideUp 0.5s ease-out'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- NAVBAR -->
+  <nav class="bg-gray-800/95 backdrop-blur-sm shadow-lg fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20">
+        <div class="flex items-center">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <img src="images/WeHo_logo.png" alt="SNAP Logo" class="h-12 w-12 transition-transform group-hover:scale-110" />
+            <span class="text-white font-bold text-xl hover:text-accent transition-colors font-display">SNAP</span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-accent transition-colors font-medium">Home</a>
+          <a href="calendar.html" class="text-white hover:text-accent transition-colors font-medium">Calendar</a>
+          <a href="resources.html" class="text-white hover:text-accent transition-colors font-medium">Resources</a>
+          <a href="faq.html" class="text-white hover:text-accent transition-colors font-medium">FAQ</a>
+          <a href="donate.html" class="text-white hover:text-accent transition-colors font-medium">Donate</a>
+          <a href="contact.html" class="text-white hover:text-accent transition-colors font-medium">Connect</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="text-white hover:text-accent focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="relative min-h-screen flex items-center">
+    <div class="absolute inset-0">
+      <img src="images/mural_for_hero.png" alt="Community Mural" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-800/80 to-gray-800/60"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center animate-slide-up">
+      <div class="flex justify-center mb-8 animate-float">
+        <img src="images/WeHo_logo.png" alt="SNAP Logo" class="h-32 w-32" />
+      </div>
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 font-display">South Nashville Action People</h1>
+      <p class="text-2xl text-white/90 mb-12 font-light">Connecting neighbors and building community since 2002</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#next-event" class="bg-white text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-accent transition-all transform hover:scale-105 shadow-lg">See What's Next</a>
+        <a href="donate.html" class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Support Our Work</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- QUICK LINKS -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-16 font-display">Quick Links</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <a href="calendar.html" class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all transform hover:scale-105 group">
+          <div class="text-5xl mb-4 text-vibrant-orange group-hover:animate-float">📅</div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4 font-display">Upcoming Events</h3>
+          <p class="text-gray-600">Stay updated with our community calendar</p>
+        </a>
+        <a href="resources.html" class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all transform hover:scale-105 group">
+          <div class="text-5xl mb-4 text-vibrant-green group-hover:animate-float">📚</div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4 font-display">Resources</h3>
+          <p class="text-gray-600">Access local services and information</p>
+        </a>
+        <a href="contact.html" class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all transform hover:scale-105 group">
+          <div class="text-5xl mb-4 text-vibrant-purple group-hover:animate-float">📞</div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4 font-display">Get Involved</h3>
+          <p class="text-gray-600">Join our community initiatives</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEXT UP EVENT -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-16 font-display text-gray-800">Next Up</h2>
+      <div class="max-w-3xl mx-auto">
+        <div id="next-event" class="bg-gray-50 rounded-2xl overflow-hidden hover:shadow-lg transition-all transform hover:scale-105">
+          <div class="grid grid-cols-1 md:grid-cols-3">
+            <div class="md:col-span-1 bg-vibrant-orange text-white p-8 flex flex-col items-center justify-center text-center">
+              <div class="text-4xl font-bold mb-2" id="event-date">15</div>
+              <div class="text-xl font-semibold" id="event-month">JUN</div>
+              <div class="text-lg mt-4" id="event-time">6:00 PM</div>
+            </div>
+            <div class="md:col-span-2 p-8">
+              <h3 class="text-2xl font-bold text-gray-800 mb-4" id="event-title">Loading next event...</h3>
+              <p class="text-gray-600 mb-4" id="event-description"></p>
+              <div class="flex items-center gap-4 text-gray-500 mb-4">
+                <span class="flex items-center gap-2">
+                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                  </svg>
+                  <span id="event-location">Loading location...</span>
+                </span>
+              </div>
+              <a href="calendar.html" class="inline-flex items-center gap-2 bg-vibrant-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-orange-600 transition-all">
+                View All Events
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-4xl font-bold mb-6 font-display text-gray-800">About SNAP</h2>
+          <p class="text-gray-600 mb-6">The SNAP Neighborhood Association is dedicated to fostering a vibrant, inclusive community where neighbors connect, support each other, and work together to make our neighborhood a better place to live.</p>
+          <p class="text-gray-600 mb-8">Through regular events, community projects, and collaborative initiatives, we strive to build lasting relationships and create a strong sense of belonging for all residents.</p>
+          <a href="about.html" class="inline-block bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Learn More</a>
+        </div>
+        <div class="relative">
+          <img src="images/community_garden.png" alt="Community Garden" class="rounded-2xl shadow-2xl" />
+          <div class="absolute -bottom-6 -left-6 bg-vibrant-green text-white p-4 rounded-lg shadow-lg">
+            <p class="font-semibold">Join our community garden!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMPACT METRICS -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-center mb-16 font-display text-gray-800">Our Impact</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all transform hover:scale-105">
+          <div class="text-5xl mb-4 text-vibrant-orange">👥</div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4 font-display">Active Members</h3>
+          <p class="text-4xl font-bold text-gray-800">500+</p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all transform hover:scale-105">
+          <div class="text-5xl mb-4 text-vibrant-green">🎉</div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4 font-display">Annual Events</h3>
+          <p class="text-4xl font-bold text-gray-800">24</p>
+        </div>
+        <div class="bg-gray-50 rounded-2xl p-8 text-center hover:shadow-lg transition-all transform hover:scale-105">
+          <div class="text-5xl mb-4 text-vibrant-purple">🏡</div>
+          <h3 class="text-2xl font-semibold text-gray-800 mb-4 font-display">Neighborhood Projects</h3>
+          <p class="text-4xl font-bold text-gray-800">12</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <p class="text-gray-400">📫 snaptn@gmail.com | 501(c)(3) nonprofit</p>
+        </div>
+        <div class="text-center">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+          <span class="mx-2">·</span>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+        </div>
+        <div class="text-right">
+          <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+          <span class="mx-2">|</span>
+          <a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Next Event JavaScript -->
+  <script>
+    // Function to fetch the next upcoming event
+    async function fetchNextEvent() {
+      try {
+        // This is a placeholder - replace with your actual calendar API endpoint
+        const response = await fetch('YOUR_CALENDAR_API_ENDPOINT');
+        const event = await response.json();
+        
+        // Update the event card with the fetched data
+        document.getElementById('event-date').textContent = new Date(event.startTime).getDate();
+        document.getElementById('event-month').textContent = new Date(event.startTime).toLocaleString('default', { month: 'short' }).toUpperCase();
+        document.getElementById('event-time').textContent = new Date(event.startTime).toLocaleTimeString('default', { hour: 'numeric', minute: '2-digit' });
+        document.getElementById('event-title').textContent = event.title;
+        document.getElementById('event-description').textContent = event.description;
+        document.getElementById('event-location').textContent = event.location;
+      } catch (error) {
+        console.error('Error fetching next event:', error);
+        // Show a default message if the fetch fails
+        document.getElementById('event-title').textContent = 'No upcoming events';
+        document.getElementById('event-description').textContent = 'Check back soon for our next community event!';
+      }
+    }
+
+    // Fetch the next event when the page loads
+    document.addEventListener('DOMContentLoaded', fetchNextEvent);
+  </script>
+</body>
+</html>

@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Donate - SNAP Neighborhood Association</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2C3E50',    // Dark blue-gray
+            secondary: '#E74C3C',  // Red
+            accent: '#ECF0F1',     // Light gray
+            dark: '#2C3E50',       // Dark blue-gray
+            light: '#ECF0F1',      // Light gray
+            vibrant: {
+              orange: '#FF6B35',
+              yellow: '#FFD93D',
+              green: '#4CAF50',
+              purple: '#9C27B0'
+            }
+          },
+          fontFamily: {
+            'display': ['"Playfair Display"', 'serif'],
+            'sans': ['Poppins', 'sans-serif']
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'slide-up': 'slideUp 0.5s ease-out'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- NAVBAR -->
+  <nav class="bg-gray-800/95 backdrop-blur-sm shadow-lg fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20">
+        <div class="flex items-center">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <img src="images/WeHo_logo.png" alt="SNAP Logo" class="h-12 w-12 transition-transform group-hover:scale-110" />
+            <span class="text-white font-bold text-xl hover:text-accent transition-colors font-display">SNAP</span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-accent transition-colors font-medium">Home</a>
+          <a href="calendar.html" class="text-white hover:text-accent transition-colors font-medium">Calendar</a>
+          <a href="resources.html" class="text-white hover:text-accent transition-colors font-medium">Resources</a>
+          <a href="faq.html" class="text-white hover:text-accent transition-colors font-medium">FAQ</a>
+          <a href="donate.html" class="text-white hover:text-accent transition-colors font-medium">Donate</a>
+          <a href="contact.html" class="text-white hover:text-accent transition-colors font-medium">Connect</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="text-white hover:text-accent focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="relative pt-32 pb-20">
+    <div class="absolute inset-0">
+      <img src="images/mural_for_hero.png" alt="Community Mural" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-800/80 to-gray-800/60"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-slide-up">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 font-display">Support Our Community</h1>
+      <p class="text-2xl text-white/90 font-light mb-8">Your contribution makes a difference</p>
+      <a href="#donation-form" class="inline-block bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Donate Now</a>
+    </div>
+  </header>
+
+  <!-- IMPACT STORY -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center font-display">Building a Stronger Community Together</h2>
+      
+      <!-- Impact Slideshow -->
+      <div class="relative">
+        <div class="overflow-hidden rounded-2xl shadow-xl">
+          <div id="impact-slideshow" class="flex transition-transform duration-500 ease-in-out">
+            <!-- Slide 1: Housing & Development -->
+            <div class="w-full flex-shrink-0 relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-900/50">
+                <img src="images/housing.jpg" alt="Housing Impact" class="w-full h-[600px] object-cover opacity-50" />
+              </div>
+              <div class="relative h-[600px] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8">
+                  <div class="text-white">
+                    <h3 class="text-3xl font-bold mb-6 font-display">Housing & Development</h3>
+                    <p class="text-lg mb-8">Your donations directly support our mission to maintain and create affordable housing options in South Nashville. Through partnerships with local developers and community initiatives, we've helped secure housing for dozens of families.</p>
+                    <ul class="space-y-4">
+                      <li class="flex items-center text-xl">
+                        <svg class="h-6 w-6 text-vibrant-orange mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        25 new affordable housing units
+                      </li>
+                      <li class="flex items-center text-xl">
+                        <svg class="h-6 w-6 text-vibrant-orange mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        $500,000 in housing assistance
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="hidden lg:block">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                      <div class="text-center">
+                        <p class="text-5xl font-bold text-vibrant-orange mb-2">25</p>
+                        <p class="text-white text-lg">New Housing Units</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Youth & Education -->
+            <div class="w-full flex-shrink-0 relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-900/50">
+                <img src="images/youth.jpg" alt="Youth Programs" class="w-full h-[600px] object-cover opacity-50" />
+              </div>
+              <div class="relative h-[600px] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8">
+                  <div class="text-white">
+                    <h3 class="text-3xl font-bold mb-6 font-display">Youth & Education</h3>
+                    <p class="text-lg mb-8">Investing in our community's future through comprehensive youth programs and educational initiatives that empower the next generation of leaders.</p>
+                    <ul class="space-y-4">
+                      <li class="flex items-center text-xl">
+                        <svg class="h-6 w-6 text-vibrant-purple mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        50+ youth mentored annually
+                      </li>
+                      <li class="flex items-center text-xl">
+                        <svg class="h-6 w-6 text-vibrant-purple mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        3 after-school programs
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="hidden lg:block">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                      <div class="text-center">
+                        <p class="text-5xl font-bold text-vibrant-purple mb-2">50+</p>
+                        <p class="text-white text-lg">Youth Mentored</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: Community Events -->
+            <div class="w-full flex-shrink-0 relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-900/50">
+                <img src="images/events.jpg" alt="Community Events" class="w-full h-[600px] object-cover opacity-50" />
+              </div>
+              <div class="relative h-[600px] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8">
+                  <div class="text-white">
+                    <h3 class="text-3xl font-bold mb-6 font-display">Community Events</h3>
+                    <p class="text-lg mb-8">Bringing neighbors together through engaging events that celebrate our community's diversity and strengthen our bonds.</p>
+                    <ul class="space-y-4">
+                      <li class="flex items-center text-xl">
+                        <svg class="h-6 w-6 text-vibrant-yellow mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        12 major events per year
+                      </li>
+                      <li class="flex items-center text-xl">
+                        <svg class="h-6 w-6 text-vibrant-yellow mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        1,000+ community members engaged
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="hidden lg:block">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                      <div class="text-center">
+                        <p class="text-5xl font-bold text-vibrant-yellow mb-2">12</p>
+                        <p class="text-white text-lg">Annual Events</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 4: Neighborhood Improvements -->
+            <div class="w-full flex-shrink-0 relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-900/50">
+                <img src="images/improvements.jpg" alt="Neighborhood Improvements" class="w-full h-[600px] object-cover opacity-50" />
+              </div>
+              <div class="relative h-[600px] flex items-center">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-8">
+                  <div class="text-white">
+                    <h3 class="text-3xl font-bold mb-6 font-display">Neighborhood Improvements</h3>
+                    <p class="text-lg mb-8">Creating beautiful, sustainable spaces that enhance our community's quality of life and bring neighbors together.</p>
+                    <ul class="space-y-4">
+                      <li class="flex items-center text-xl">
+                        <svg class="h-6 w-6 text-vibrant-green mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        5 new community gardens
+                      </li>
+                      <li class="flex items-center text-xl">
+                        <svg class="h-6 w-6 text-vibrant-green mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                        </svg>
+                        3 park renovations completed
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="hidden lg:block">
+                    <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8">
+                      <div class="text-center">
+                        <p class="text-5xl font-bold text-vibrant-green mb-2">5</p>
+                        <p class="text-white text-lg">New Gardens</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Dots -->
+          <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+            <button class="slide-dot w-4 h-4 rounded-full bg-vibrant-orange opacity-100 transition-all" data-slide="0"></button>
+            <button class="slide-dot w-4 h-4 rounded-full bg-gray-300 opacity-50 transition-all" data-slide="1"></button>
+            <button class="slide-dot w-4 h-4 rounded-full bg-gray-300 opacity-50 transition-all" data-slide="2"></button>
+            <button class="slide-dot w-4 h-4 rounded-full bg-gray-300 opacity-50 transition-all" data-slide="3"></button>
+          </div>
+
+          <!-- Navigation Arrows -->
+          <button class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-vibrant-orange transition-colors" id="prev-slide">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-vibrant-orange transition-colors" id="next-slide">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACCOMPLISHMENT TIMELINE -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center font-display">Our Journey</h2>
+      <div class="relative">
+        <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-vibrant-orange"></div>
+        <div class="space-y-12">
+          <div class="relative flex items-center">
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-vibrant-orange"></div>
+            <div class="w-1/2 pr-12 text-right">
+              <h3 class="text-xl font-semibold text-vibrant-orange">2023</h3>
+              <p class="text-gray-600">Launched new affordable housing initiative</p>
+            </div>
+            <div class="w-1/2 pl-12">
+              <p class="text-gray-600">Secured funding for 25 new housing units</p>
+            </div>
+          </div>
+          <div class="relative flex items-center">
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-vibrant-orange"></div>
+            <div class="w-1/2 pr-12 text-right">
+              <h3 class="text-xl font-semibold text-vibrant-orange">2022</h3>
+              <p class="text-gray-600">Expanded community center facilities</p>
+            </div>
+            <div class="w-1/2 pl-12">
+              <p class="text-gray-600">Added new meeting rooms and outdoor spaces</p>
+            </div>
+          </div>
+          <div class="relative flex items-center">
+            <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-vibrant-orange"></div>
+            <div class="w-1/2 pr-12 text-right">
+              <h3 class="text-xl font-semibold text-vibrant-orange">2021</h3>
+              <p class="text-gray-600">Started youth mentorship program</p>
+            </div>
+            <div class="w-1/2 pl-12">
+              <p class="text-gray-600">Mentored 50+ local students</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-4xl font-bold text-gray-800 mb-12 text-center font-display">Community Impact Stories</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-md">
+          <div class="flex items-center mb-6">
+            <img src="images/testimonial1.jpg" alt="Sarah Johnson" class="w-16 h-16 rounded-full object-cover mr-4" />
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800">Sarah Johnson</h3>
+              <p class="text-gray-600">Local Resident</p>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">"Thanks to SNAP's housing assistance program, my family was able to find a safe and affordable home in our community. The support we received made all the difference."</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-md">
+          <div class="flex items-center mb-6">
+            <img src="images/testimonial2.jpg" alt="Michael Chen" class="w-16 h-16 rounded-full object-cover mr-4" />
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800">Michael Chen</h3>
+              <p class="text-gray-600">Business Owner</p>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">"As a local business owner, I've seen firsthand how SNAP's initiatives have strengthened our community. Their work has created a better environment for everyone."</p>
+        </div>
+        <div class="bg-white rounded-2xl p-8 shadow-md">
+          <div class="flex items-center mb-6">
+            <img src="images/testimonial3.jpg" alt="Maria Rodriguez" class="w-16 h-16 rounded-full object-cover mr-4" />
+            <div>
+              <h3 class="text-xl font-semibold text-gray-800">Maria Rodriguez</h3>
+              <p class="text-gray-600">Community Volunteer</p>
+            </div>
+          </div>
+          <p class="text-gray-600 italic">"Volunteering with SNAP has shown me the power of community action. Every donation makes a real difference in people's lives."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DONATION SECTION -->
+  <section id="donation-form" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- Donation Form -->
+        <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Make a Donation</h2>
+          <form id="donation-form" class="space-y-6">
+            <!-- Donation Type -->
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">Donation Type</label>
+              <div class="grid grid-cols-2 gap-4">
+                <button type="button" class="donation-type-btn bg-vibrant-orange text-white px-4 py-3 rounded-lg font-semibold transition-all">One Time</button>
+                <button type="button" class="donation-type-btn bg-white border border-gray-300 text-gray-800 px-4 py-3 rounded-lg font-semibold hover:bg-vibrant-orange hover:text-white transition-all">Monthly</button>
+              </div>
+            </div>
+            <!-- Amount -->
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">Amount</label>
+              <div class="grid grid-cols-4 gap-4">
+                <button type="button" class="amount-btn bg-white border border-gray-300 text-gray-800 px-4 py-3 rounded-lg font-semibold hover:bg-vibrant-orange hover:text-white transition-all">$10</button>
+                <button type="button" class="amount-btn bg-white border border-gray-300 text-gray-800 px-4 py-3 rounded-lg font-semibold hover:bg-vibrant-orange hover:text-white transition-all">$25</button>
+                <button type="button" class="amount-btn bg-white border border-gray-300 text-gray-800 px-4 py-3 rounded-lg font-semibold hover:bg-vibrant-orange hover:text-white transition-all">$50</button>
+                <button type="button" class="amount-btn bg-white border border-gray-300 text-gray-800 px-4 py-3 rounded-lg font-semibold hover:bg-vibrant-orange hover:text-white transition-all">$100</button>
+              </div>
+              <input type="number" id="custom-amount" placeholder="Custom amount" class="w-full mt-4 px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">Name</label>
+              <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+            </div>
+            <div>
+              <label class="block text-gray-700 font-medium mb-2">Email</label>
+              <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+            </div>
+            <div id="card-element" class="w-full px-4 py-3 rounded-lg bg-white border border-gray-300"></div>
+            <div id="card-errors" class="text-red-500 text-sm mt-2"></div>
+            <button type="submit" class="w-full bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Donate Now</button>
+          </form>
+        </div>
+
+        <!-- Impact -->
+        <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Your Impact</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-green mb-2">Community Programs</h3>
+              <p class="text-gray-600">Support youth activities, senior services, and neighborhood events.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-purple mb-2">Facility Maintenance</h3>
+              <p class="text-gray-600">Help maintain and improve our community center and public spaces.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-yellow mb-2">Neighborhood Projects</h3>
+              <p class="text-gray-600">Fund beautification initiatives and safety improvements.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">Housing Initiatives</h3>
+              <p class="text-gray-600">Support affordable housing programs and community development.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <p class="text-gray-400">📫 snaptn@gmail.com | 501(c)(3) nonprofit</p>
+        </div>
+        <div class="text-center">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+          <span class="mx-2">·</span>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+        </div>
+        <div class="text-right">
+          <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+          <span class="mx-2">|</span>
+          <a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Stripe Integration -->
+  <script src="https://js.stripe.com/v3/"></script>
+  <script>
+    // Initialize Stripe
+    const stripe = Stripe('YOUR_PUBLISHABLE_KEY');
+    const elements = stripe.elements();
+    const card = elements.create('card');
+    card.mount('#card-element');
+
+    // Handle form submission
+    const form = document.getElementById('donation-form');
+    const amountButtons = document.querySelectorAll('.amount-btn');
+    const donationTypeButtons = document.querySelectorAll('.donation-type-btn');
+    const customAmount = document.getElementById('custom-amount');
+    let selectedAmount = 0;
+    let isRecurring = false;
+
+    // Handle donation type selection
+    donationTypeButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        donationTypeButtons.forEach(btn => {
+          btn.classList.remove('bg-vibrant-orange', 'text-white');
+          btn.classList.add('bg-white', 'border', 'border-gray-300', 'text-gray-800');
+        });
+        button.classList.remove('bg-white', 'border', 'border-gray-300', 'text-gray-800');
+        button.classList.add('bg-vibrant-orange', 'text-white');
+        isRecurring = button.textContent.trim() === 'Monthly';
+      });
+    });
+
+    // Handle amount selection
+    amountButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        amountButtons.forEach(btn => btn.classList.remove('bg-vibrant-orange', 'text-white'));
+        button.classList.add('bg-vibrant-orange', 'text-white');
+        selectedAmount = parseInt(button.textContent.replace('$', ''));
+        customAmount.value = '';
+      });
+    });
+
+    customAmount.addEventListener('input', () => {
+      amountButtons.forEach(btn => btn.classList.remove('bg-vibrant-orange', 'text-white'));
+      selectedAmount = parseFloat(customAmount.value) || 0;
+    });
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const { token, error } = await stripe.createToken(card);
+
+      if (error) {
+        const errorElement = document.getElementById('card-errors');
+        errorElement.textContent = error.message;
+      } else {
+        // Send token and amount to your server
+        const response = await fetch('/process-donation', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            token: token.id,
+            amount: selectedAmount,
+            isRecurring: isRecurring,
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value
+          })
+        });
+
+        const result = await response.json();
+        if (result.success) {
+          // Show success message and send tax receipt
+          alert(`Thank you for your ${isRecurring ? 'monthly' : 'one-time'} donation! A tax receipt will be sent to your email.`);
+          form.reset();
+        } else {
+          alert('There was an error processing your donation. Please try again.');
+        }
+      }
+    });
+  </script>
+
+  <!-- Impact Slideshow Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slideshow = document.getElementById('impact-slideshow');
+      const dots = document.querySelectorAll('.slide-dot');
+      const prevButton = document.getElementById('prev-slide');
+      const nextButton = document.getElementById('next-slide');
+      let currentSlide = 0;
+      const totalSlides = dots.length;
+      let slideInterval;
+
+      function goToSlide(index) {
+        slideshow.style.transform = `translateX(-${index * 100}%)`;
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('bg-vibrant-orange', i === index);
+          dot.classList.toggle('bg-gray-300', i !== index);
+          dot.classList.toggle('opacity-100', i === index);
+          dot.classList.toggle('opacity-50', i !== index);
+        });
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        goToSlide((currentSlide + 1) % totalSlides);
+      }
+
+      function prevSlide() {
+        goToSlide((currentSlide - 1 + totalSlides) % totalSlides);
+      }
+
+      // Add click handlers to dots
+      dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => {
+          clearInterval(slideInterval);
+          goToSlide(index);
+          startSlideshow();
+        });
+      });
+
+      // Add click handlers to arrows
+      prevButton.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        prevSlide();
+        startSlideshow();
+      });
+
+      nextButton.addEventListener('click', () => {
+        clearInterval(slideInterval);
+        nextSlide();
+        startSlideshow();
+      });
+
+      function startSlideshow() {
+        slideInterval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
+      }
+
+      // Start the slideshow
+      startSlideshow();
+
+      // Pause slideshow on hover
+      slideshow.addEventListener('mouseenter', () => clearInterval(slideInterval));
+      slideshow.addEventListener('mouseleave', startSlideshow);
+    });
+  </script>
+</body>
+</html>
+

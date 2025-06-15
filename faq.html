@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAQ - SNAP Neighborhood Association</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2C3E50',    // Dark blue-gray
+            secondary: '#E74C3C',  // Red
+            accent: '#ECF0F1',     // Light gray
+            dark: '#2C3E50',       // Dark blue-gray
+            light: '#ECF0F1',      // Light gray
+            vibrant: {
+              orange: '#FF6B35',
+              yellow: '#FFD93D',
+              green: '#4CAF50',
+              purple: '#9C27B0'
+            }
+          },
+          fontFamily: {
+            'display': ['"Playfair Display"', 'serif'],
+            'sans': ['Poppins', 'sans-serif']
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'slide-up': 'slideUp 0.5s ease-out'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- NAVBAR -->
+  <nav class="bg-gray-800/95 backdrop-blur-sm shadow-lg fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20">
+        <div class="flex items-center">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <img src="images/WeHo_logo.png" alt="SNAP Logo" class="h-12 w-12 transition-transform group-hover:scale-110" />
+            <span class="text-white font-bold text-xl hover:text-accent transition-colors font-display">SNAP</span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-accent transition-colors font-medium">Home</a>
+          <a href="calendar.html" class="text-white hover:text-accent transition-colors font-medium">Calendar</a>
+          <a href="resources.html" class="text-white hover:text-accent transition-colors font-medium">Resources</a>
+          <a href="faq.html" class="text-white hover:text-accent transition-colors font-medium">FAQ</a>
+          <a href="donate.html" class="text-white hover:text-accent transition-colors font-medium">Donate</a>
+          <a href="contact.html" class="text-white hover:text-accent transition-colors font-medium">Connect</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="text-white hover:text-accent focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="relative pt-32 pb-20">
+    <div class="absolute inset-0">
+      <img src="images/mural_for_hero.png" alt="Community Mural" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-gradient-to-b from-gray-800/80 to-gray-800/60"></div>
+    </div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center animate-slide-up">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 font-display">Frequently Asked Questions</h1>
+      <p class="text-2xl text-white/90 font-light">Find answers to common questions about our community</p>
+    </div>
+  </header>
+
+  <!-- FAQ SECTIONS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <!-- SNAP Basics -->
+        <div id="what-is-snap" class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">SNAP Basics</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">What is SNAP?</h3>
+              <p class="text-gray-600">SNAP (South Nashville Action People) is a neighborhood organization dedicated to preserving and improving the Wedgewood-Houston neighborhood. We work to maintain the residential character of our community while supporting responsible development and community engagement.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">What area does SNAP cover?</h3>
+              <p class="text-gray-600">SNAP represents the Wedgewood-Houston neighborhood, which is bounded by I-65 to the west, Chestnut Street to the north, 8th Avenue South to the east, and the CSX railroad tracks to the south.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Financial & Transparency -->
+        <div id="finances" class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Financial & Transparency</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">How are SNAP's funds used?</h3>
+              <p class="text-gray-600">SNAP's funds are used to support community initiatives, maintain the community center, organize neighborhood events, and fund projects that benefit the entire community. All financial decisions are made transparently and with community input.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">How can I view SNAP's financial records?</h3>
+              <p class="text-gray-600">SNAP's financial records are available to all community members. You can request to view them at any community meeting or by contacting the board directly.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Community Center -->
+        <div id="booking" class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Community Center</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">How can I book the community center?</h3>
+              <p class="text-gray-600">The SNAP Community Center can be booked for community events and meetings. To book the space, please contact us through the contact form or attend a community meeting to discuss your event.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">What facilities are available at the community center?</h3>
+              <p class="text-gray-600">The community center includes a main meeting room, kitchen facilities, and outdoor space. The center is available for community meetings, events, and activities that benefit the neighborhood.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Getting Involved -->
+        <div id="volunteering" class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Getting Involved</h2>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">How can I get involved with SNAP?</h3>
+              <p class="text-gray-600">There are many ways to get involved with SNAP! You can attend community meetings, participate in neighborhood events, volunteer for community projects, or join one of our committees. All neighbors are welcome to participate.</p>
+            </div>
+            <div>
+              <h3 class="text-xl font-semibold text-vibrant-orange mb-2">When are community meetings held?</h3>
+              <p class="text-gray-600">Community meetings are held on the second Tuesday of every other month at 6:30 PM at the SNAP Community Center. All neighbors are welcome to attend and participate in discussions about neighborhood issues and initiatives.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Questions -->
+        <div class="bg-gray-50 rounded-2xl p-8 hover:shadow-lg transition-all">
+          <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Still Have Questions?</h2>
+          <p class="text-gray-600 mb-6">Can't find what you're looking for? We're here to help!</p>
+          <a href="contact.html" class="inline-block bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <p class="text-gray-400">📫 snaptn@gmail.com | 501(c)(3) nonprofit</p>
+        </div>
+        <div class="text-center">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+          <span class="mx-2">·</span>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+        </div>
+        <div class="text-right">
+          <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+          <span class="mx-2">|</span>
+          <a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
