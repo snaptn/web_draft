@@ -206,275 +206,214 @@
   <section id="development-toolkit" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-3xl font-bold text-gray-800 mb-12 font-display">Development Toolkit</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Zoning Guidelines -->
-        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-200">
           <div class="text-vibrant-orange mb-4">
             <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Zoning Guidelines</h3>
-          <p class="text-gray-600 mb-4">Learn about our neighborhood's zoning regulations and development standards.</p>
-          <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold inline-flex items-center">
-            View Guidelines
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Development Map</h3>
+          <p class="text-gray-600 mb-4">Interactive map showing current development projects in Nashville.</p>
+          <button onclick="toggleContent('zoning-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+            View Map
+          </button>
         </div>
 
-        <!-- Design Standards -->
-        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+        <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-200">
           <div class="text-vibrant-orange mb-4">
             <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Design Standards</h3>
-          <p class="text-gray-600 mb-4">Review architectural and design guidelines for new developments.</p>
-          <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold inline-flex items-center">
-            View Standards
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </a>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Development Guidelines</h3>
+          <p class="text-gray-600 mb-4">Learn about development guidelines and requirements in the Wedgewood-Houston neighborhood.</p>
+          <button onclick="toggleContent('guidelines-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+            View Guidelines
+          </button>
         </div>
 
-        <!-- Permit Process -->
-        <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all">
+        <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-200">
           <div class="text-vibrant-orange mb-4">
             <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
           </div>
-          <h3 class="text-xl font-bold text-gray-800 mb-2">Permit Process</h3>
-          <p class="text-gray-600 mb-4">Step-by-step guide to obtaining necessary permits and approvals.</p>
-          <a href="#" class="text-vibrant-orange hover:text-orange-600 font-semibold inline-flex items-center">
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Permit Process</h3>
+          <p class="text-gray-600 mb-4">Understand the permit process and requirements for development projects.</p>
+          <button onclick="toggleContent('permits-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
             View Process
-            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </button>
+        </div>
+
+        <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-200">
+          <div class="text-vibrant-orange mb-4">
+            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
             </svg>
-          </a>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Development Rubric</h3>
+          <p class="text-gray-600 mb-4">Review the criteria used to evaluate development projects in our community.</p>
+          <button onclick="toggleContent('rubric-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+            View Rubric
+          </button>
         </div>
       </div>
 
-      <!-- Development Toolkit -->
-      <div class="bg-white rounded-xl shadow-md p-8 mb-8">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6">Development Toolkit</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          <!-- Zoning Information -->
-          <div class="bg-white rounded-lg p-6 border border-gray-200 hover:shadow-lg transition-shadow duration-200">
-            <div class="text-vibrant-orange mb-4">
-              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+      <!-- Content Sections -->
+      <div id="zoning-content" class="hidden mt-8">
+        <div class="bg-white rounded-lg p-6 border border-gray-200">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xl font-semibold text-gray-900">Development Map</h3>
+            <button onclick="downloadPDF('zoning-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
               </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Development Map</h3>
-            <p class="text-gray-600 mb-4">Interactive map showing current development projects in Nashville.</p>
-            <button onclick="toggleContent('zoning-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
-              View Map
+              Download PDF
             </button>
           </div>
-
-          <!-- Development Guidelines -->
-          <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
-            <div class="text-vibrant-orange mb-4">
-              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Development Guidelines</h3>
-            <p class="text-gray-600 mb-4">Review our neighborhood's development guidelines and best practices.</p>
-            <button onclick="toggleContent('guidelines-content')" class="text-vibrant-orange hover:text-orange-600 font-medium">
-              View Guidelines →
-            </button>
-          </div>
-
-          <!-- Permit Process -->
-          <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
-            <div class="text-vibrant-orange mb-4">
-              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Permit Process</h3>
-            <p class="text-gray-600 mb-4">Understand the permit application process and requirements.</p>
-            <button onclick="toggleContent('permits-content')" class="text-vibrant-orange hover:text-orange-600 font-medium">
-              View Permit Guide →
-            </button>
-          </div>
-
-          <!-- Development Rubric -->
-          <div class="bg-gray-50 rounded-lg p-6 hover:shadow-md transition-shadow">
-            <div class="text-vibrant-orange mb-4">
-              <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-              </svg>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Development Rubric</h3>
-            <p class="text-gray-600 mb-4">Review our community's criteria for evaluating development projects.</p>
-            <button onclick="toggleContent('rubric-content')" class="text-vibrant-orange hover:text-orange-600 font-medium">
-              View Rubric →
-            </button>
+          <p class="text-gray-600 mb-4">
+            This interactive development map is maintained by the Nashville Business Journal. The map shows current development projects, construction cranes, and planned developments across Nashville. 
+            <a href="https://www.bizjournals.com/nashville/maps/nashville-crane-watch" target="_blank" class="text-vibrant-orange hover:text-orange-600 underline">View the original map here</a>.
+          </p>
+          <div class="aspect-w-16 aspect-h-9">
+            <iframe 
+              src="https://nshtest.maps.arcgis.com/apps/Shortlist/index.html?appid=ae87107f05c54caaa88f839572cf08d6"
+              class="w-full h-[600px] border-0 rounded-lg shadow-lg"
+              allowfullscreen>
+            </iframe>
           </div>
         </div>
+      </div>
 
-        <!-- Content Sections -->
-        <div id="zoning-content" class="hidden mt-8">
-          <div class="bg-white rounded-lg p-6 border border-gray-200">
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="text-xl font-semibold text-gray-900">Development Map</h3>
-              <button onclick="downloadPDF('zoning-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download PDF
-              </button>
-            </div>
-            <p class="text-gray-600 mb-4">
-              This interactive development map is maintained by the Nashville Business Journal. The map shows current development projects, construction cranes, and planned developments across Nashville. 
-              <a href="https://www.bizjournals.com/nashville/maps/nashville-crane-watch" target="_blank" class="text-vibrant-orange hover:text-orange-600 underline">View the original map here</a>.
+      <div id="guidelines-content" class="hidden mt-8">
+        <div class="bg-white rounded-lg p-6 border border-gray-200">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xl font-semibold text-gray-900">Development Guidelines</h3>
+            <button onclick="downloadPDF('guidelines-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Download PDF
+            </button>
+          </div>
+          <p class="text-gray-600">Detailed development guidelines coming soon...</p>
+        </div>
+      </div>
+
+      <div id="permits-content" class="hidden mt-8">
+        <div class="bg-white rounded-lg p-6 border border-gray-200">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xl font-semibold text-gray-900">Permit Process</h3>
+            <button onclick="downloadPDF('permits-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Download PDF
+            </button>
+          </div>
+          <p class="text-gray-600">Detailed permit process information coming soon...</p>
+        </div>
+      </div>
+
+      <div id="rubric-content" class="hidden mt-8">
+        <div class="bg-white rounded-lg p-6 border border-gray-200">
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-xl font-semibold text-gray-900">Development Rubric</h3>
+            <button onclick="downloadPDF('rubric-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+              </svg>
+              Download PDF
+            </button>
+          </div>
+          <p class="text-gray-600 mb-6">
+            This rubric is used to evaluate proposed projects in relation to Wedgewood Houston's community needs and wishes. Projects must meet at least a minimum score of 8 to be eligible for Wedgewood Houston community/SNAP support (letters, etc.)
+          </p>
+
+          <div class="overflow-x-auto mb-6">
+            <table class="min-w-full divide-y divide-gray-200">
+              <thead>
+                <tr>
+                  <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
+                  <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Strong (2 Points)</th>
+                  <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sufficient (1 Point)</th>
+                  <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Lacking (0 Points)</th>
+                </tr>
+              </thead>
+              <tbody class="bg-white divide-y divide-gray-200">
+                <!-- Community Character -->
+                <tr>
+                  <td class="px-6 py-4 whitespace-normal">
+                    <div class="text-sm font-medium text-gray-900">Community Character</div>
+                    <div class="text-sm text-gray-500">Example: reuses exist. Railyard-scale reuse. Art & utility visible, etc.</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Design and development plan are respectful of community character and history. Proposed buildings symbolize a reimagining of historical neighborhood structures. Unit makeup reflects surrounding community needs.</td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Proposed development includes units that are different from the character of neighborhood and surrounding properties. Size of proposed units do not fit the scale of the need in the community.</td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Building stands out from community character. No focus on maintaining historical character or meeting the community's needs.</td>
+                </tr>
+
+                <!-- Housing Diversity -->
+                <tr>
+                  <td class="px-6 py-4 whitespace-normal">
+                    <div class="text-sm font-medium text-gray-900">Housing Diversity</div>
+                    <div class="text-sm text-gray-500">Examples: various unit formats, affordable income (AMI) definitions, rental units, family focused.</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">At least 30% of proposed housing/unit options are diverse housing options.</td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Only one type of diverse housing/units included in plan, BUT still represents at least 10% of the proposed units within the project.</td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Less than 10% diverse housing/units, included in the proposed project.</td>
+                </tr>
+
+                <!-- Transportation Consideration -->
+                <tr>
+                  <td class="px-6 py-4 whitespace-normal">
+                    <div class="text-sm font-medium text-gray-900">Transportation Consideration</div>
+                    <div class="text-sm text-gray-500">Examples: parking, walkability, sidewalks, etc.</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Clear design for access to public and personal transportation needs. Improvements in neighborhood walkability, including pedestrian safety.</td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Plan minimally addresses pedestrian safety around busy streets, near schools, etc. Vague language surrounding developer's commitment to public or personal transportation needs.</td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">No consideration of public or personal transportation needs or pedestrian safety.</td>
+                </tr>
+
+                <!-- Sustainability -->
+                <tr>
+                  <td class="px-6 py-4 whitespace-normal">
+                    <div class="text-sm font-medium text-gray-900">Sustainability</div>
+                    <div class="text-sm text-gray-500">LEED = Leadership in Energy & Environmental Design (examples: water efficiency, renewable materials, structural design efficiency, etc.)</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Plan for EITHER 10% increase in trees or unique use(s) of green space with focus on mitigating urban runoff. Inclusive, welcoming public spaces open to neighborhood and community members. Multiple LEED concepts firmly established.</td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Meets more than the minimum required open space, storm water, and landscape requirements, as defined in the Metro Nashville Zoning Ordinance. Plan for inclusive and welcoming open space. Some LEED concepts established.</td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Meets ONLY the minimum required open space, storm water, and landscape requirements, as defined in the Metro Nashville Zoning Ordinance. Lacks plan for inclusive and welcoming public open space. No LEED concepts established.</td>
+                </tr>
+
+                <!-- Artist/Creative -->
+                <tr>
+                  <td class="px-6 py-4 whitespace-normal">
+                    <div class="text-sm font-medium text-gray-900">Artist/Creative</div>
+                    <div class="text-sm text-gray-500">Could be viewed within Housing Diversity category.</div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Proposed project focuses on inclusion of affordable maker space(s), entrepreneurial education, STEM, industrial space or art spaces that are inclusive in design and meant to welcome all neighbors. Includes potential outreach plan, to recruit diverse array of local artists, for onsite installations.</td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Focus on limited types of artistic/creative space. Lacks plan to ensure equity in either types of projects or artists inclusion. No recruitment plan to ensure inclusive diversity.</td>
+                  <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">No focus on artistic/creative space.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="bg-gray-50 rounded-lg p-4">
+            <h3 class="text-lg font-semibold text-gray-900 mb-3">Community Priorities</h3>
+            <p class="text-gray-600 mb-3">
+              SNAP evaluates proposed development projects within the WeHo community using a rubric that was formed with community input to ensure development projects address priorities and preserve the history of the neighborhood.
             </p>
-            <div class="aspect-w-16 aspect-h-9">
-              <iframe 
-                src="https://nshtest.maps.arcgis.com/apps/Shortlist/index.html?appid=ae87107f05c54caaa88f839572cf08d6"
-                class="w-full h-[600px] border-0 rounded-lg shadow-lg"
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
-
-        <div id="guidelines-content" class="hidden mt-8">
-          <div class="bg-white rounded-lg p-6 border border-gray-200">
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="text-xl font-semibold text-gray-900">Development Guidelines</h3>
-              <button onclick="downloadPDF('guidelines-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download PDF
-              </button>
-            </div>
-            <p class="text-gray-600">Detailed development guidelines coming soon...</p>
-          </div>
-        </div>
-
-        <div id="permits-content" class="hidden mt-8">
-          <div class="bg-white rounded-lg p-6 border border-gray-200">
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="text-xl font-semibold text-gray-900">Permit Process</h3>
-              <button onclick="downloadPDF('permits-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download PDF
-              </button>
-            </div>
-            <p class="text-gray-600">Detailed permit process information coming soon...</p>
-          </div>
-        </div>
-
-        <div id="rubric-content" class="hidden mt-8">
-          <div class="bg-white rounded-lg p-6 border border-gray-200">
-            <div class="flex justify-between items-center mb-4">
-              <h3 class="text-xl font-semibold text-gray-900">Development Rubric</h3>
-              <button onclick="downloadPDF('rubric-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-                Download PDF
-              </button>
-            </div>
-            <p class="text-gray-600 mb-6">
-              This rubric is used to evaluate proposed projects in relation to Wedgewood Houston's community needs and wishes. Projects must meet at least a minimum score of 8 to be eligible for Wedgewood Houston community/SNAP support (letters, etc.)
+            <p class="text-gray-600 mb-3">
+              Developers should incorporate this rubric into presentations when meeting with the community.
             </p>
-
-            <div class="overflow-x-auto mb-6">
-              <table class="min-w-full divide-y divide-gray-200">
-                <thead>
-                  <tr>
-                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Category</th>
-                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Strong (2 Points)</th>
-                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sufficient (1 Point)</th>
-                    <th class="px-6 py-3 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Lacking (0 Points)</th>
-                  </tr>
-                </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                  <!-- Community Character -->
-                  <tr>
-                    <td class="px-6 py-4 whitespace-normal">
-                      <div class="text-sm font-medium text-gray-900">Community Character</div>
-                      <div class="text-sm text-gray-500">Example: reuses exist. Railyard-scale reuse. Art & utility visible, etc.</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Design and development plan are respectful of community character and history. Proposed buildings symbolize a reimagining of historical neighborhood structures. Unit makeup reflects surrounding community needs.</td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Proposed development includes units that are different from the character of neighborhood and surrounding properties. Size of proposed units do not fit the scale of the need in the community.</td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Building stands out from community character. No focus on maintaining historical character or meeting the community's needs.</td>
-                  </tr>
-
-                  <!-- Housing Diversity -->
-                  <tr>
-                    <td class="px-6 py-4 whitespace-normal">
-                      <div class="text-sm font-medium text-gray-900">Housing Diversity</div>
-                      <div class="text-sm text-gray-500">Examples: various unit formats, affordable income (AMI) definitions, rental units, family focused.</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">At least 30% of proposed housing/unit options are diverse housing options.</td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Only one type of diverse housing/units included in plan, BUT still represents at least 10% of the proposed units within the project.</td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Less than 10% diverse housing/units, included in the proposed project.</td>
-                  </tr>
-
-                  <!-- Transportation Consideration -->
-                  <tr>
-                    <td class="px-6 py-4 whitespace-normal">
-                      <div class="text-sm font-medium text-gray-900">Transportation Consideration</div>
-                      <div class="text-sm text-gray-500">Examples: parking, walkability, sidewalks, etc.</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Clear design for access to public and personal transportation needs. Improvements in neighborhood walkability, including pedestrian safety.</td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Plan minimally addresses pedestrian safety around busy streets, near schools, etc. Vague language surrounding developer's commitment to public or personal transportation needs.</td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">No consideration of public or personal transportation needs or pedestrian safety.</td>
-                  </tr>
-
-                  <!-- Sustainability -->
-                  <tr>
-                    <td class="px-6 py-4 whitespace-normal">
-                      <div class="text-sm font-medium text-gray-900">Sustainability</div>
-                      <div class="text-sm text-gray-500">LEED = Leadership in Energy & Environmental Design (examples: water efficiency, renewable materials, structural design efficiency, etc.)</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Plan for EITHER 10% increase in trees or unique use(s) of green space with focus on mitigating urban runoff. Inclusive, welcoming public spaces open to neighborhood and community members. Multiple LEED concepts firmly established.</td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Meets more than the minimum required open space, storm water, and landscape requirements, as defined in the Metro Nashville Zoning Ordinance. Plan for inclusive and welcoming open space. Some LEED concepts established.</td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Meets ONLY the minimum required open space, storm water, and landscape requirements, as defined in the Metro Nashville Zoning Ordinance. Lacks plan for inclusive and welcoming public open space. No LEED concepts established.</td>
-                  </tr>
-
-                  <!-- Artist/Creative -->
-                  <tr>
-                    <td class="px-6 py-4 whitespace-normal">
-                      <div class="text-sm font-medium text-gray-900">Artist/Creative</div>
-                      <div class="text-sm text-gray-500">Could be viewed within Housing Diversity category.</div>
-                    </td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Proposed project focuses on inclusion of affordable maker space(s), entrepreneurial education, STEM, industrial space or art spaces that are inclusive in design and meant to welcome all neighbors. Includes potential outreach plan, to recruit diverse array of local artists, for onsite installations.</td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">Focus on limited types of artistic/creative space. Lacks plan to ensure equity in either types of projects or artists inclusion. No recruitment plan to ensure inclusive diversity.</td>
-                    <td class="px-6 py-4 whitespace-normal text-sm text-gray-500">No focus on artistic/creative space.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="bg-gray-50 rounded-lg p-4">
-              <h3 class="text-lg font-semibold text-gray-900 mb-3">Community Priorities</h3>
-              <p class="text-gray-600 mb-3">
-                SNAP evaluates proposed development projects within the WeHo community using a rubric that was formed with community input to ensure development projects address priorities and preserve the history of the neighborhood.
-              </p>
-              <p class="text-gray-600 mb-3">
-                Developers should incorporate this rubric into presentations when meeting with the community.
-              </p>
-              <p class="text-gray-600 mb-3">
-                SNAP members will score proposed development projects using the rubric to determine if neighborhood support is present.
-              </p>
-              <p class="text-gray-500 italic">
-                Note: This rubric is a living document and may change to fit the changing needs of the Wedgewood Houston Community.
-              </p>
-            </div>
+            <p class="text-gray-600 mb-3">
+              SNAP members will score proposed development projects using the rubric to determine if neighborhood support is present.
+            </p>
+            <p class="text-gray-500 italic">
+              Note: This rubric is a living document and may change to fit the changing needs of the Wedgewood Houston Community.
+            </p>
           </div>
         </div>
       </div>
@@ -750,9 +689,6 @@
       // Show the selected content
       const content = document.getElementById(contentId);
       content.classList.remove('hidden');
-      
-      // Scroll to the content
-      content.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     function downloadPDF(contentId) {
