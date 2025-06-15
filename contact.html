@@ -98,9 +98,15 @@
         <h2 class="text-4xl font-bold text-gray-800 mb-6 font-display">Stay Connected</h2>
         <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">Join our email list to receive updates about community events, meetings, and important announcements.</p>
         <form class="max-w-md mx-auto">
-          <div class="flex flex-col sm:flex-row gap-4">
-            <input type="email" placeholder="Enter your email" class="flex-1 px-6 py-4 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
-            <button type="submit" class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Subscribe</button>
+          <div class="flex flex-col gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" name="firstName" placeholder="First Name" required class="w-full px-6 py-4 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+              <input type="text" name="lastName" placeholder="Last Name" required class="w-full px-6 py-4 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <input type="email" name="email" placeholder="Enter your email" required class="flex-1 px-6 py-4 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+              <button type="submit" class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Subscribe</button>
+            </div>
           </div>
         </form>
       </div>
@@ -126,6 +132,12 @@
             <div>
               <label class="block text-gray-700 font-medium mb-2">Message</label>
               <textarea name="message" required class="w-full px-4 py-3 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-400 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" rows="6"></textarea>
+            </div>
+            <div class="flex items-center">
+              <input type="checkbox" name="mailing_list" id="mailing_list" class="h-5 w-5 text-vibrant-orange focus:ring-vibrant-orange border-gray-300 rounded" />
+              <label for="mailing_list" class="ml-2 block text-gray-700">
+                Sign me up for SNAP's email list
+              </label>
             </div>
             <button type="submit" class="w-full bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Send Message</button>
           </form>
@@ -224,17 +236,25 @@
       <!-- Mailchimp Form -->
       <div id="mc_embed_signup">
         <form action="https://southnashville.us1.list-manage.com/subscribe/post?u=YOUR_MAILCHIMP_U&amp;id=YOUR_MAILCHIMP_ID" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Enter your email" required
-              class="flex-1 px-6 py-4 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
-            <button type="submit" name="subscribe" id="mc-embedded-subscribe"
-              class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
-              Subscribe
-            </button>
-          </div>
-          <!-- Real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-          <div style="position: absolute; left: -5000px;" aria-hidden="true">
-            <input type="text" name="b_YOUR_MAILCHIMP_U_YOUR_MAILCHIMP_ID" tabindex="-1" value="">
+          <div class="flex flex-col gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <input type="text" name="FNAME" id="mce-FNAME" placeholder="First Name" required
+                class="w-full px-6 py-4 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+              <input type="text" name="LNAME" id="mce-LNAME" placeholder="Last Name" required
+                class="w-full px-6 py-4 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <input type="email" name="EMAIL" id="mce-EMAIL" placeholder="Enter your email" required
+                class="flex-1 px-6 py-4 rounded-lg bg-white border border-gray-300 text-gray-800 placeholder-gray-500 focus:ring-2 focus:ring-vibrant-orange focus:border-transparent transition-all" />
+              <button type="submit" name="subscribe" id="mc-embedded-subscribe"
+                class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
+                Subscribe
+              </button>
+            </div>
+            <!-- Real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+            <div style="position: absolute; left: -5000px;" aria-hidden="true">
+              <input type="text" name="b_YOUR_MAILCHIMP_U_YOUR_MAILCHIMP_ID" tabindex="-1" value="">
+            </div>
           </div>
         </form>
       </div>

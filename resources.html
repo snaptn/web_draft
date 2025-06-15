@@ -265,12 +265,19 @@
         <div class="bg-white rounded-lg p-6 border border-gray-200">
           <div class="flex justify-between items-center mb-4">
             <h3 class="text-xl font-semibold text-gray-900">Development Map</h3>
-            <button onclick="downloadPDF('zoning-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Download PDF
-            </button>
+            <div class="flex items-center space-x-4">
+              <button onclick="downloadPDF('zoning-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download PDF
+              </button>
+              <button onclick="toggleContent('zoning-content')" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
           <p class="text-gray-600 mb-4">
             This interactive development map is maintained by the Nashville Business Journal. The map shows current development projects, construction cranes, and planned developments across Nashville. 
@@ -290,12 +297,19 @@
         <div class="bg-white rounded-lg p-6 border border-gray-200">
           <div class="flex justify-between items-center mb-4">
             <h3 class="text-xl font-semibold text-gray-900">Development Guidelines</h3>
-            <button onclick="downloadPDF('guidelines-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Download PDF
-            </button>
+            <div class="flex items-center space-x-4">
+              <button onclick="downloadPDF('guidelines-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download PDF
+              </button>
+              <button onclick="toggleContent('guidelines-content')" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
           <p class="text-gray-600">Detailed development guidelines coming soon...</p>
         </div>
@@ -305,12 +319,19 @@
         <div class="bg-white rounded-lg p-6 border border-gray-200">
           <div class="flex justify-between items-center mb-4">
             <h3 class="text-xl font-semibold text-gray-900">Permit Process</h3>
-            <button onclick="downloadPDF('permits-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Download PDF
-            </button>
+            <div class="flex items-center space-x-4">
+              <button onclick="downloadPDF('permits-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download PDF
+              </button>
+              <button onclick="toggleContent('permits-content')" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
           <p class="text-gray-600">Detailed permit process information coming soon...</p>
         </div>
@@ -320,12 +341,19 @@
         <div class="bg-white rounded-lg p-6 border border-gray-200">
           <div class="flex justify-between items-center mb-4">
             <h3 class="text-xl font-semibold text-gray-900">Development Rubric</h3>
-            <button onclick="downloadPDF('rubric-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
-              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-              </svg>
-              Download PDF
-            </button>
+            <div class="flex items-center space-x-4">
+              <button onclick="downloadPDF('rubric-content')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-vibrant-orange hover:bg-orange-600 transition-colors duration-200">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download PDF
+              </button>
+              <button onclick="toggleContent('rubric-content')" class="inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 transition-colors duration-200">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
           <p class="text-gray-600 mb-6">
             This rubric is used to evaluate proposed projects in relation to Wedgewood Houston's community needs and wishes. Projects must meet at least a minimum score of 8 to be eligible for Wedgewood Houston community/SNAP support (letters, etc.)
@@ -681,13 +709,20 @@
 
   <script>
     function toggleContent(contentId) {
+      const content = document.getElementById(contentId);
+      
+      // If the content is already visible, hide it
+      if (!content.classList.contains('hidden')) {
+        content.classList.add('hidden');
+        return;
+      }
+      
       // Hide all content sections first
       document.querySelectorAll('[id$="-content"]').forEach(section => {
         section.classList.add('hidden');
       });
       
       // Show the selected content
-      const content = document.getElementById(contentId);
       content.classList.remove('hidden');
     }
 
