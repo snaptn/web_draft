@@ -1,0 +1,293 @@
+<?php
+$historyDir = 'images/history/';
+$images = glob($historyDir . '*.png');
+$totalSlides = count($images);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>History - SNAP Neighborhood Association</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2C3E50',    // Dark blue-gray
+            secondary: '#E74C3C',  // Red
+            accent: '#ECF0F1',     // Light gray
+            dark: '#2C3E50',       // Dark blue-gray
+            light: '#ECF0F1',      // Light gray
+            vibrant: {
+              orange: '#FF6B35',
+              yellow: '#FFD93D',
+              green: '#4CAF50',
+              purple: '#9C27B0'
+            }
+          },
+          fontFamily: {
+            'display': ['"Playfair Display"', 'serif'],
+            'sans': ['Poppins', 'sans-serif']
+          },
+          animation: {
+            'float': 'float 3s ease-in-out infinite',
+            'slide-up': 'slideUp 0.5s ease-out'
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-10px)' }
+            },
+            slideUp: {
+              '0%': { transform: 'translateY(20px)', opacity: '0' },
+              '100%': { transform: 'translateY(0)', opacity: '1' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- NAVBAR -->
+  <nav class="bg-gray-800/95 backdrop-blur-sm shadow-lg fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-20">
+        <div class="flex items-center">
+          <a href="index.html" class="flex items-center space-x-3 group">
+            <img src="images/WeHo_logo.png" alt="SNAP Logo" class="h-12 w-12 transition-transform group-hover:scale-110" />
+            <span class="text-white font-bold text-xl hover:text-accent transition-colors font-display">SNAP</span>
+          </a>
+        </div>
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-white hover:text-accent transition-colors font-medium">Home</a>
+          <a href="history.html" class="text-white hover:text-accent transition-colors font-medium">History</a>
+          <a href="calendar.html" class="text-white hover:text-accent transition-colors font-medium">Calendar</a>
+          <a href="resources.html" class="text-white hover:text-accent transition-colors font-medium">Resources</a>
+          <a href="faq.html" class="text-white hover:text-accent transition-colors font-medium">FAQ</a>
+          <a href="donate.html" class="text-white hover:text-accent transition-colors font-medium">Donate</a>
+          <a href="contact.html" class="text-white hover:text-accent transition-colors font-medium">Connect</a>
+        </div>
+        <div class="md:hidden flex items-center">
+          <button class="text-white hover:text-accent focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="relative pt-24 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h1 class="text-5xl font-bold text-center mb-6 font-display text-gray-800">Welcome to Wedgewood-Houston!</h1>
+      <p class="text-xl text-center text-gray-600 max-w-5xl mx-auto">You're at the SNAP Center, which is the neighborhood community center by South Nashville Action People. We hope you enjoy the stories below of our Legacy Mural!</p>
+    </div>
+  </header>
+
+  <!-- HISTORY SLIDESHOW -->
+  <section class="pt-4 pb-2 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="relative">
+        <div class="overflow-hidden rounded-2xl shadow-xl">
+          <div id="history-slideshow" class="flex transition-transform duration-500 ease-in-out">
+            <!-- Slides will be dynamically generated -->
+          </div>
+
+          <!-- Navigation Dots -->
+          <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3" id="dots-container">
+            <!-- Dots will be dynamically generated -->
+          </div>
+
+          <!-- Navigation Arrows -->
+          <button class="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-vibrant-orange transition-colors" id="prev-slide">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button class="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-vibrant-orange transition-colors" id="next-slide">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THANK YOU SECTION -->
+  <section class="pt-2 pb-4 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <p class="text-center text-gray-600 text-lg">Thank you to Core, Hines, Artville, and Ingram Charities in coordination with Nashville Soccer Club for your donations that made this mural depicting the history of the neighborhood possible.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-800 text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <p class="text-gray-400">📫 snaptn@gmail.com | 501(c)(3) nonprofit</p>
+        </div>
+        <div class="text-center">
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Facebook</a>
+          <span class="mx-2">·</span>
+          <a href="#" class="text-gray-400 hover:text-white transition-colors">Instagram</a>
+        </div>
+        <div class="text-right">
+          <a href="contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+          <span class="mx-2">|</span>
+          <a href="faq.html" class="text-gray-400 hover:text-white transition-colors">FAQ</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Slideshow configuration
+    const slideshow = document.getElementById('history-slideshow');
+    const dotsContainer = document.getElementById('dots-container');
+    const prevButton = document.getElementById('prev-slide');
+    const nextButton = document.getElementById('next-slide');
+    let currentSlide = 0;
+    let totalSlides = 0;
+    const slideHeight = 600; // Height in pixels
+
+    // Embedded slide data
+    const slideData = [
+      // Format: [imageFilename, header, text]
+      ["snap_founders.png", "Neighbors Unite: SNAP's Birth", "SNAP was founded in 1980 when a group of neighbors teamed up to help each other with various neighborhood issues. The founders are (left to right) Eva Parrish, Joyce Stockton, Bill Perkins, & Louise Russell."],
+      ["wehome_podcast.png", "WeHome Podcast Captures Voices", "In 2018, a neighborhood resident produced the WeHome podcast, which was a collection of stories by neighbors captured as part of the community engagement efforts for the Wedgewood-Houston Chestnut Hill Planning Study."],
+      ["fort_negley.png", "USCT Legacy at Fort Negley", "Fort Negley was built in 1862 by the US Colored Troops (USCT) division during the Civil War and many soldiers settled in the neighborhood after the war. Descendants of the local USCT, like the pictured Gary Burke, are still involved in the community."],
+      ["lucy_holt.png", "From School to Affordable Homes", "In the 1950s, the Lucy Holt Moore Center provided kindergarten classes/programs year‑round. In 1974, it became Humphreys Street Elementary School. And in 1985, it was acquired by SNAP and converted into affordable housing, which we continue to operate today."],
+      ["moon_socks.png", "Socks That Reached the Moon", "May Hosiery Mill socks could be found everywhere — including on the moon! Neil Armstrong and Buzz Aldrin wore May Hosiery socks on the Apollo 11 mission."],
+      ["jewish_refugees.png", "Mill Refuge for Jewish Exiles", "In the 1930s, the May Hosiery Mill employed hundreds of European Jewish refugees who fled Nazi Germany."],
+      ["united_record.png", "United Record Spins Beatles 7\"", "United Record Press was founded in the neighborhood in 1949. It was one of the top manufacturers of vinyl records — it put out the first 7‑inch vinyl record by The Beatles."],
+      ["motown_suite.png", "Motown Suite in Jim Crow Era", "United Record Press produced for labels like Motown and Vee Jay Records, both putting out music by Black artists. During the Jim Crow era of the 1960s, URP created a Motown Suite in their facility to accommodate Black artists traveling to the City to perform and record."],
+      ["music_future.png", "Shaping Music City's Future", "The neighborhood has its own history of music in Music City, including hosting CMA Fest for two decades at the Fairgrounds. We also look to shape the future of the industry by being home to LiveNation, Apple Music, and the Academy of Country Music."],
+      ["art_crawl.png", "First Saturday WeHo Art Crawl", "All types of art forms are welcomed by the community and are included on the monthly WeHo Art Crawl that takes place the first Saturday of every month."],
+      ["rat_town.png", "Rat Town: Branding Debate", "When the neighborhood was in the middle of \"rebranding\" to Wedgewood‑Houston many names were considered. This included \"Rat Town\" due to the abundance of rats as a result of the former Purina pet food facility."],
+      ["geodis_park.png", "Geodis Park & Community Pact", "Nashville Soccer Club, the first MLS team in the state of Tennessee, joined the neighborhood in 2022. SNAP worked with other groups around the City to negotiate the State's first private Community Benefits Agreement for Geodis Park."],
+      ["hosiery_factory.png", "May Hosiery: Sock Empire", "In 1897, Jacob May moved to Nashville and opened the May Hosiery Mill. At the time, the mill was one of the city's biggest employers, and at its peak produced around 1 million socks each week."],
+      ["we_are_weho.png", "Artists Reclaim Mill Spaces", "When May Hosiery Mill closed in 1985 it became a grungy hub for all types of artists and makers."],
+      ["coffee_chats.png", "Community Coffeehouse Conversations", "Wedgewood-Houston has always been a place where neighbors can meet over a cup of coffee to discuss what is happening in the community."]
+    ];
+
+    // Function to check if an image exists
+    function checkImageExists(imagePath) {
+      return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => resolve(true);
+        img.onerror = () => resolve(false);
+        img.src = `images/history/${imagePath}`;
+      });
+    }
+
+    // Function to initialize slideshow
+    async function initializeSlideshow() {
+      // Clear existing content
+      slideshow.innerHTML = '';
+      dotsContainer.innerHTML = '';
+
+      const existingSlides = [];
+
+      // Check which images exist
+      for (const row of slideData) {
+        const imagePath = row[0].trim();
+        const exists = await checkImageExists(imagePath);
+        if (exists) {
+          existingSlides.push({
+            image: imagePath,
+            header: row[1].trim(),
+            text: row[2].trim()
+          });
+        }
+      }
+
+      totalSlides = existingSlides.length;
+
+      // Generate slides for existing images
+      for (let i = 0; i < totalSlides; i++) {
+        const slide = existingSlides[i];
+        // Create slide
+        const slideElement = document.createElement('div');
+        slideElement.className = 'w-full flex-shrink-0 relative';
+        slideElement.innerHTML = `
+          <div class="absolute inset-0 bg-gradient-to-r from-gray-900/90 to-gray-900/50">
+            <img src="images/history/${slide.image}" alt="${slide.header}" class="w-full h-[${slideHeight}px] object-contain opacity-50" />
+          </div>
+          <div class="relative h-[${slideHeight}px] flex items-center">
+            <div class="max-w-2xl px-8">
+              <div class="text-white">
+                <h3 class="text-3xl font-bold mb-6 font-display">${slide.header}</h3>
+                <p class="text-lg mb-8">${slide.text}</p>
+              </div>
+            </div>
+          </div>
+        `;
+        slideshow.appendChild(slideElement);
+
+        // Create dot
+        const dot = document.createElement('button');
+        dot.className = `slide-dot w-4 h-4 rounded-full ${i === 0 ? 'bg-vibrant-orange opacity-100' : 'bg-gray-300 opacity-50'} transition-all`;
+        dot.dataset.slide = i;
+        dotsContainer.appendChild(dot);
+      }
+
+      // Initialize the slideshow
+      updateSlideshow();
+
+      // Set up event listeners
+      prevButton.addEventListener('click', () => {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlideshow();
+      });
+
+      nextButton.addEventListener('click', () => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlideshow();
+      });
+
+      document.querySelectorAll('.slide-dot').forEach(dot => {
+        dot.addEventListener('click', () => {
+          currentSlide = parseInt(dot.dataset.slide);
+          updateSlideshow();
+        });
+      });
+
+      // Auto-advance slides every 10 seconds
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlideshow();
+      }, 10000);
+    }
+
+    // Update slideshow position
+    function updateSlideshow() {
+      if (totalSlides === 0) return;
+      slideshow.style.transform = `translateX(-${currentSlide * 100}%)`;
+      // Update dots
+      document.querySelectorAll('.slide-dot').forEach((dot, index) => {
+        dot.classList.toggle('bg-vibrant-orange', index === currentSlide);
+        dot.classList.toggle('opacity-100', index === currentSlide);
+        dot.classList.toggle('bg-gray-300', index !== currentSlide);
+        dot.classList.toggle('opacity-50', index !== currentSlide);
+      });
+    }
+
+    // Wait for DOM to be fully loaded
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize the slideshow
+      initializeSlideshow();
+    });
+  </script>
+</body>
+</html> 

@@ -22,7 +22,11 @@
               orange: '#FF6B35',
               yellow: '#FFD93D',
               green: '#4CAF50',
-              purple: '#9C27B0'
+              purple: '#9C27B0',
+              blue: '#2196F3',
+              pink: '#E91E63',
+              teal: '#009688',
+              indigo: '#3F51B5'
             }
           },
           fontFamily: {
@@ -62,6 +66,7 @@
         </div>
         <div class="hidden md:flex items-center space-x-8">
           <a href="index.html" class="text-white hover:text-accent transition-colors font-medium">Home</a>
+          <a href="history.html" class="text-white hover:text-accent transition-colors font-medium">History</a>
           <a href="calendar.html" class="text-white hover:text-accent transition-colors font-medium">Calendar</a>
           <a href="resources.html" class="text-white hover:text-accent transition-colors font-medium">Resources</a>
           <a href="faq.html" class="text-white hover:text-accent transition-colors font-medium">FAQ</a>
@@ -110,53 +115,49 @@
   <!-- MAIN CALENDAR SECTION -->
   <section class="py-20 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-        <!-- Calendar Filters -->
-        <div class="lg:col-span-1">
-          <div class="bg-gray-50 rounded-2xl p-6 sticky top-24">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 font-display">Filters</h2>
-            <div class="space-y-4">
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Event Type</label>
-                <select class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
-                  <option value="">All Events</option>
-                  <option value="meeting">Community Meetings</option>
-                  <option value="youth">Youth Programs</option>
-                  <option value="arts">Arts & Culture</option>
-                  <option value="health">Health & Wellness</option>
-                  <option value="business">Local Business</option>
-                </select>
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Date Range</label>
-                <input type="date" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
-              </div>
-              <button class="w-full bg-vibrant-orange text-white px-4 py-2 rounded-lg hover:bg-orange-600 transition-colors">
-                Apply Filters
-              </button>
-            </div>
-          </div>
-        </div>
+      <!-- Category Filters -->
+      <div class="mb-8 flex flex-wrap justify-center gap-4">
+        <button class="px-4 py-2 rounded-lg text-white bg-vibrant-orange hover:bg-orange-600 transition-colors filter-btn" data-category="select-all" data-color="orange">
+          Select All
+        </button>
+        <button class="px-4 py-2 rounded-lg text-white bg-vibrant-orange hover:bg-orange-600 transition-colors filter-btn" data-category="select-none" data-color="orange">
+          Select None
+        </button>
+        <button class="px-4 py-2 rounded-lg text-white bg-vibrant-blue hover:bg-blue-600 transition-colors filter-btn" data-category="meeting" data-color="blue">
+          Community Meetings
+        </button>
+        <button class="px-4 py-2 rounded-lg text-white bg-vibrant-green hover:bg-green-600 transition-colors filter-btn" data-category="youth" data-color="green">
+          Youth Programs
+        </button>
+        <button class="px-4 py-2 rounded-lg text-white bg-vibrant-purple hover:bg-purple-600 transition-colors filter-btn" data-category="arts" data-color="purple">
+          Arts & Culture
+        </button>
+        <button class="px-4 py-2 rounded-lg text-white bg-vibrant-pink hover:bg-pink-600 transition-colors filter-btn" data-category="health" data-color="pink">
+          Health & Wellness
+        </button>
+        <button class="px-4 py-2 rounded-lg text-white bg-vibrant-teal hover:bg-teal-600 transition-colors filter-btn" data-category="business" data-color="teal">
+          Local Business
+        </button>
+      </div>
 
-        <!-- Google Calendar Embed -->
-        <div class="lg:col-span-3">
-          <div class="bg-gray-50 rounded-2xl p-6">
-            <iframe 
-              src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0&height=600"
-              style="border: 0" 
-              width="100%" 
-              height="600" 
-              frameborder="0" 
-              scrolling="no">
-            </iframe>
-          </div>
+      <!-- Google Calendar Embed -->
+      <div class="max-w-7xl mx-auto">
+        <div class="bg-gray-50 rounded-2xl p-6">
+          <iframe 
+            src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID&showTitle=0&showNav=1&showPrint=0&showTabs=1&showCalendars=0&showTz=0&height=600"
+            style="border: 0" 
+            width="100%" 
+            height="600" 
+            frameborder="0" 
+            scrolling="no">
+          </iframe>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SUBMIT EVENT SECTION -->
-  <section class="py-20 bg-gray-50">
+  <section id="submit-event" class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <!-- Submit Event Form -->
@@ -182,13 +183,17 @@
               </select>
             </div>
             
-            <div class="grid grid-cols-2 gap-4">
+            <div class="grid grid-cols-3 gap-4">
               <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Date</label>
                 <input type="date" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
               </div>
               <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Time</label>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Start Time</label>
+                <input type="time" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">End Time</label>
                 <input type="time" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
               </div>
             </div>
@@ -205,6 +210,14 @@
             
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Contact Information</label>
+              <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                  <input type="text" required placeholder="First Name" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                </div>
+                <div>
+                  <input type="text" required placeholder="Last Name" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                </div>
+              </div>
               <input type="email" required placeholder="Your email" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
             </div>
             
@@ -215,7 +228,7 @@
         </div>
 
         <!-- Book Community Center -->
-        <div>
+        <div id="book-center">
           <h2 class="text-3xl font-bold text-gray-800 mb-6 font-display">Book the Community Center</h2>
           <p class="text-gray-600 mb-8">Our community center is available for rent for private events, meetings, and gatherings. Check availability and submit a booking request below.</p>
           
@@ -231,15 +244,9 @@
               </select>
             </div>
             
-            <div class="grid grid-cols-2 gap-4">
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">Start Date</label>
-                <input type="date" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
-              </div>
-              <div>
-                <label class="block text-sm font-medium text-gray-700 mb-2">End Date</label>
-                <input type="date" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
-              </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Date</label>
+              <input type="date" required class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
             </div>
             
             <div class="grid grid-cols-2 gap-4">
@@ -265,6 +272,14 @@
             
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2">Contact Information</label>
+              <div class="grid grid-cols-2 gap-4 mb-4">
+                <div>
+                  <input type="text" required placeholder="First Name" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                </div>
+                <div>
+                  <input type="text" required placeholder="Last Name" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
+                </div>
+              </div>
               <input type="email" required placeholder="Your email" class="w-full rounded-lg border-gray-300 focus:ring-vibrant-orange focus:border-vibrant-orange">
             </div>
             
@@ -279,18 +294,136 @@
 
   <!-- Event Submission JavaScript -->
   <script>
+    // Smooth scroll function
+    function smoothScrollTo(elementId) {
+      const element = document.getElementById(elementId);
+      const headerOffset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+
+    // Add click handlers to the navigation buttons
+    document.querySelector('a[href="#submit-event"]').addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('submit-event');
+    });
+
+    document.querySelector('a[href="#book-center"]').addEventListener('click', function(e) {
+      e.preventDefault();
+      smoothScrollTo('book-center');
+    });
+
+    // Category filter functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    let selectedCategories = new Set();
+    const selectAllButton = document.querySelector('[data-category="select-all"]');
+    const selectNoneButton = document.querySelector('[data-category="select-none"]');
+
+    function toggleButtonStyle(button) {
+      const color = button.dataset.color;
+      const isActive = button.classList.contains('active');
+      
+      if (isActive) {
+        // Switch to filled style
+        button.classList.remove(`text-vibrant-${color}`, `border-2`, `border-vibrant-${color}`, 'bg-transparent');
+        button.classList.remove(`hover:bg-vibrant-${color}`, `hover:bg-opacity-10`);
+        button.classList.add(`bg-vibrant-${color}`, 'hover:bg-orange-600', 'text-white');
+      } else {
+        // Switch to outlined style
+        button.classList.remove(`bg-vibrant-${color}`, 'hover:bg-orange-600', 'text-white');
+        button.classList.add(`text-vibrant-${color}`, `border-2`, `border-vibrant-${color}`, 'bg-transparent');
+        button.classList.add(`hover:bg-vibrant-${color}`, `hover:bg-opacity-10`);
+      }
+    }
+
+    function updateControlButtonsState() {
+      const categoryButtons = Array.from(filterButtons).filter(btn => 
+        btn.dataset.category !== 'select-all' && btn.dataset.category !== 'select-none'
+      );
+      const allSelected = categoryButtons.every(btn => btn.classList.contains('active'));
+      const noneSelected = categoryButtons.every(btn => !btn.classList.contains('active'));
+
+      // Update Select All button - filled when all are selected
+      if (allSelected) {
+        selectAllButton.classList.add('active');
+      } else {
+        selectAllButton.classList.remove('active');
+      }
+      toggleButtonStyle(selectAllButton);
+
+      // Update Select None button - filled when none are selected
+      if (noneSelected) {
+        selectNoneButton.classList.add('active');
+      } else {
+        selectNoneButton.classList.remove('active');
+      }
+      toggleButtonStyle(selectNoneButton);
+    }
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const category = button.dataset.category;
+        
+        if (category === 'select-all') {
+          // Select all categories - fill all buttons
+          const categoryButtons = Array.from(filterButtons).filter(btn => 
+            btn.dataset.category !== 'select-all' && btn.dataset.category !== 'select-none'
+          );
+          categoryButtons.forEach(btn => {
+            selectedCategories.add(btn.dataset.category);
+            btn.classList.add('active');
+            // Force filled style
+            const color = btn.dataset.color;
+            btn.classList.remove(`text-vibrant-${color}`, `border-2`, `border-vibrant-${color}`, 'bg-transparent');
+            btn.classList.remove(`hover:bg-vibrant-${color}`, `hover:bg-opacity-10`);
+            btn.classList.add(`bg-vibrant-${color}`, 'hover:bg-orange-600', 'text-white');
+          });
+        } else if (category === 'select-none') {
+          // Deselect all categories - unfill all buttons
+          const categoryButtons = Array.from(filterButtons).filter(btn => 
+            btn.dataset.category !== 'select-all' && btn.dataset.category !== 'select-none'
+          );
+          categoryButtons.forEach(btn => {
+            selectedCategories.delete(btn.dataset.category);
+            btn.classList.remove('active');
+            // Force outlined style
+            const color = btn.dataset.color;
+            btn.classList.remove(`bg-vibrant-${color}`, 'hover:bg-orange-600', 'text-white');
+            btn.classList.add(`text-vibrant-${color}`, `border-2`, `border-vibrant-${color}`, 'bg-transparent');
+            btn.classList.add(`hover:bg-vibrant-${color}`, `hover:bg-opacity-10`);
+          });
+        } else {
+          // Toggle individual category
+          if (selectedCategories.has(category)) {
+            selectedCategories.delete(category);
+            button.classList.remove('active');
+          } else {
+            selectedCategories.add(category);
+            button.classList.add('active');
+          }
+          toggleButtonStyle(button);
+        }
+        
+        updateControlButtonsState();
+
+        // Here you would update the calendar view based on selectedCategories
+        console.log('Selected categories:', Array.from(selectedCategories));
+      });
+    });
+
     document.getElementById('event-submission-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       // Add your event submission logic here
-      // This should include sending the data to your backend
-      // and handling the admin approval queue
     });
 
     document.getElementById('booking-form').addEventListener('submit', async (e) => {
       e.preventDefault();
       // Add your booking request logic here
-      // This should include checking availability
-      // and sending the request to your backend
     });
   </script>
 

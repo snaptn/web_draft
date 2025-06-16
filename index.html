@@ -62,6 +62,7 @@
         </div>
         <div class="hidden md:flex items-center space-x-8">
           <a href="index.html" class="text-white hover:text-accent transition-colors font-medium">Home</a>
+          <a href="history.html" class="text-white hover:text-accent transition-colors font-medium">History</a>
           <a href="calendar.html" class="text-white hover:text-accent transition-colors font-medium">Calendar</a>
           <a href="resources.html" class="text-white hover:text-accent transition-colors font-medium">Resources</a>
           <a href="faq.html" class="text-white hover:text-accent transition-colors font-medium">FAQ</a>
@@ -90,7 +91,7 @@
         <img src="images/WeHo_logo.png" alt="SNAP Logo" class="h-32 w-32" />
       </div>
       <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 font-display">South Nashville Action People</h1>
-      <p class="text-2xl text-white/90 mb-12 font-light">Connecting neighbors and building community since 2002</p>
+      <p class="text-2xl text-white/90 mb-12 font-light">Connecting neighbors and building community since 1980</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#next-event" class="bg-white text-gray-800 px-8 py-4 rounded-lg font-semibold hover:bg-accent transition-all transform hover:scale-105 shadow-lg">See What's Next</a>
         <a href="donate.html" class="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Support Our Work</a>
@@ -167,13 +168,9 @@
           <h2 class="text-4xl font-bold mb-6 font-display text-gray-800">About SNAP</h2>
           <p class="text-gray-600 mb-6">The SNAP Neighborhood Association is dedicated to fostering a vibrant, inclusive community where neighbors connect, support each other, and work together to make our neighborhood a better place to live.</p>
           <p class="text-gray-600 mb-8">Through regular events, community projects, and collaborative initiatives, we strive to build lasting relationships and create a strong sense of belonging for all residents.</p>
-          <a href="about.html" class="inline-block bg-vibrant-orange text-white px-8 py-4 rounded-lg font-semibold hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">Learn More</a>
         </div>
         <div class="relative">
           <img src="images/community_garden.png" alt="Community Garden" class="rounded-2xl shadow-2xl" />
-          <div class="absolute -bottom-6 -left-6 bg-vibrant-green text-white p-4 rounded-lg shadow-lg">
-            <p class="font-semibold">Join our community garden!</p>
-          </div>
         </div>
       </div>
     </div>
@@ -226,6 +223,20 @@
 
   <!-- Next Event JavaScript -->
   <script>
+    // Function to handle smooth scrolling to the next event section
+    document.querySelector('a[href="#next-event"]').addEventListener('click', function(e) {
+      e.preventDefault();
+      const nextEventSection = document.querySelector('section:has(#next-event)');
+      const headerOffset = 80; // Adjust this value based on your navbar height
+      const elementPosition = nextEventSection.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    });
+
     // Function to fetch the next upcoming event
     async function fetchNextEvent() {
       try {
