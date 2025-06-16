@@ -396,27 +396,27 @@
     }
 
     function updateControlButtonsState() {
-      const categoryButtons = Array.from(filterButtons).filter(btn => 
-        btn.dataset.category !== 'select-all' && btn.dataset.category !== 'select-none'
-      );
-      const allSelected = categoryButtons.every(btn => btn.classList.contains('active'));
-      const noneSelected = categoryButtons.every(btn => !btn.classList.contains('active'));
+      const allButtons = document.querySelectorAll('.filter-btn:not([data-category="select-all"]):not([data-category="select-none"])');
+      const allSelected = Array.from(allButtons).every(button => button.classList.contains('active'));
+      const noneSelected = Array.from(allButtons).every(button => !button.classList.contains('active'));
 
-      // Update Select All button - filled when all are selected
+      // Update Select All button
       if (allSelected) {
         selectAllButton.classList.add('active');
+        toggleButtonStyle(selectAllButton);
       } else {
         selectAllButton.classList.remove('active');
+        toggleButtonStyle(selectAllButton);
       }
-      toggleButtonStyle(selectAllButton);
 
-      // Update Select None button - filled when none are selected
+      // Update Select None button
       if (noneSelected) {
         selectNoneButton.classList.add('active');
+        toggleButtonStyle(selectNoneButton);
       } else {
         selectNoneButton.classList.remove('active');
+        toggleButtonStyle(selectNoneButton);
       }
-      toggleButtonStyle(selectNoneButton);
     }
 
     filterButtons.forEach(button => {
@@ -424,33 +424,31 @@
         const category = button.dataset.category;
         
         if (category === 'select-all') {
-          // Select all categories - fill all buttons
-          const categoryButtons = Array.from(filterButtons).filter(btn => 
-            btn.dataset.category !== 'select-all' && btn.dataset.category !== 'select-none'
-          );
-          categoryButtons.forEach(btn => {
-            selectedCategories.add(btn.dataset.category);
-            btn.classList.add('active');
-            // Force filled style
-            const color = btn.dataset.color;
-            btn.classList.remove(`text-vibrant-${color}`, `border-2`, `border-vibrant-${color}`, 'bg-transparent');
-            btn.classList.remove(`hover:bg-vibrant-${color}`, `hover:bg-opacity-10`);
-            btn.classList.add(`bg-vibrant-${color}`, 'hover:bg-orange-600', 'text-white');
+          // Select all categories
+          filterButtons.forEach(btn => {
+            if (btn !== selectAllButton && btn !== selectNoneButton) {
+              btn.classList.add('active');
+              selectedCategories.add(btn.dataset.category);
+              toggleButtonStyle(btn);
+            }
           });
+          selectAllButton.classList.add('active');
+          selectNoneButton.classList.remove('active');
+          toggleButtonStyle(selectAllButton);
+          toggleButtonStyle(selectNoneButton);
         } else if (category === 'select-none') {
-          // Deselect all categories - unfill all buttons
-          const categoryButtons = Array.from(filterButtons).filter(btn => 
-            btn.dataset.category !== 'select-all' && btn.dataset.category !== 'select-none'
-          );
-          categoryButtons.forEach(btn => {
-            selectedCategories.delete(btn.dataset.category);
-            btn.classList.remove('active');
-            // Force outlined style
-            const color = btn.dataset.color;
-            btn.classList.remove(`bg-vibrant-${color}`, 'hover:bg-orange-600', 'text-white');
-            btn.classList.add(`text-vibrant-${color}`, `border-2`, `border-vibrant-${color}`, 'bg-transparent');
-            btn.classList.add(`hover:bg-vibrant-${color}`, `hover:bg-opacity-10`);
+          // Deselect all categories
+          filterButtons.forEach(btn => {
+            if (btn !== selectAllButton && btn !== selectNoneButton) {
+              btn.classList.remove('active');
+              selectedCategories.delete(btn.dataset.category);
+              toggleButtonStyle(btn);
+            }
           });
+          selectAllButton.classList.remove('active');
+          selectNoneButton.classList.add('active');
+          toggleButtonStyle(selectAllButton);
+          toggleButtonStyle(selectNoneButton);
         } else {
           // Toggle individual category
           if (selectedCategories.has(category)) {
